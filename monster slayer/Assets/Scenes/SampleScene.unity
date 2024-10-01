@@ -637,15 +637,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1214714fe1a65049850348b08969afd,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 942136316}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1214714fe1a65049850348b08969afd,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 942136318}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1214714fe1a65049850348b08969afd,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 942136317}
   m_SourcePrefab: {fileID: 100100000, guid: d1214714fe1a65049850348b08969afd, type: 3}
 --- !u!4 &281699423 stripped
 Transform:
@@ -1321,42 +1313,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.8, z: 1}
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &942136316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942136308}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bef10ea3f32dcf340ba51f891c316e0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  isWalkingForwardHash: 0
-  isWalkingBackwardsHash: 0
-  isWalkingRightHash: 0
-  isWalkingLeftHash: 0
-  isRunForwardHash: 0
-  isRunBackwardsHash: 0
---- !u!114 &942136317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942136308}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7693b8400a61240910839dd26be314, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  velocity: 0
-  acceleration: 0.1
-  deceleration: 1
-  VelocityHash: 0
 --- !u!114 &942136318
 MonoBehaviour:
   m_ObjectHideFlags: 0

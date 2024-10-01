@@ -8,6 +8,7 @@ public class playerAnimationController : MonoBehaviour
     Animator animator;
     float velocityZ = 0.0f;
     float velocityX = 0.0f;
+    bool readyToAttack;
     public float acceleration = 2.0f;
     public float deceleration = 2.0f;
     public float maximumWalkVelocity = 0.5f;
@@ -15,6 +16,7 @@ public class playerAnimationController : MonoBehaviour
 
     int velocityZHash;
     int velocityXHash;
+    int readyToAttackHash;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class playerAnimationController : MonoBehaviour
 
         velocityZHash = Animator.StringToHash("velocity Z");
         velocityXHash = Animator.StringToHash("velocity X");
+        readyToAttackHash = Animator.StringToHash("readyToAttack");
     }
 
     void changeVelocity(bool forwardpressed, bool BackwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
@@ -138,6 +141,17 @@ public class playerAnimationController : MonoBehaviour
         }
     }
 
+    void attackAnimation(bool leftClick)
+    {
+        if (leftClick)
+        {
+            readyToAttack = true;
+        }
+        if (!leftClick)
+        {
+            readyToAttack = false;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -146,13 +160,16 @@ public class playerAnimationController : MonoBehaviour
         bool BackwardPressed = Input.GetKey(KeyCode.S);
         bool rightPressed = Input.GetKey(KeyCode.D);
         bool runPressed = Input.GetKey(KeyCode.LeftShift);
+        bool leftClick = Input.GetKey(KeyCode.Mouse0);
 
         float currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
 
         changeVelocity(forwardpressed, BackwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         lockOrResetVelocity(forwardpressed, BackwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
+        attackAnimation(leftClick);
 
         animator.SetFloat(velocityZHash, velocityZ);
         animator.SetFloat(velocityXHash, velocityX);
+        animator.SetBool(readyToAttackHash, readyToAttack);
     }
 }
