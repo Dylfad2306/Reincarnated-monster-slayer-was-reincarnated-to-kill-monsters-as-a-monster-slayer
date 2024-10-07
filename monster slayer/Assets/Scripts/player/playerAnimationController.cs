@@ -8,7 +8,7 @@ public class playerAnimationController : MonoBehaviour
     Animator animator;
     float velocityZ = 0.0f;
     float velocityX = 0.0f;
-    bool readyToAttack;
+    public bool readyToAttack;
     public float acceleration = 2.0f;
     public float deceleration = 2.0f;
     public float maximumWalkVelocity = 0.5f;
@@ -73,9 +73,9 @@ public class playerAnimationController : MonoBehaviour
             velocityZ -= Time.deltaTime * deceleration;
         }
 
-        if (!forwardpressed && velocityZ < -0.5f)
+        if (!forwardpressed && velocityZ < -0.2f)
         {
-            velocityZ = -0.5f;
+            velocityZ = -0.2f;
         }
 
         if (!leftPressed && !rightPressed && velocityX != 0.0f && (velocityX > -0.05f && velocityX < 0.05f))
