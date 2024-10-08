@@ -5,13 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
 {
-    public PlayerStats PlayerStats;
+    private PlayerStats PlayerStats;
     public EnemyStats EnemyStats;
     public EnemyHealthBar EnemyHealthBar;
 
     public NavMeshAgent agent;
 
-    public Transform player;
+    private Transform player;
+    private GameObject playerObj;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -29,19 +30,19 @@ public class EnemyAi : MonoBehaviour
     public bool playerInSightRange, playerInAttackRange;
 
 
-    private void Start()
-    {
-        EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
-    }
-
     private void Awake()
     {
+        EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
         player = GameObject.Find("playerObj").transform;
+        playerObj = GameObject.Find("playerObj");
+        PlayerStats = playerObj.GetComponent<PlayerStats>();
         agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
+        EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
+
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
@@ -95,8 +96,6 @@ public class EnemyAi : MonoBehaviour
         {
 
             PlayerStats.playerHealth -= EnemyStats.enemyDamage;
-
-            EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

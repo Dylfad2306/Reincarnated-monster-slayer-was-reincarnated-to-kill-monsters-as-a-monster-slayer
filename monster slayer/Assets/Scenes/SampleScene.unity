@@ -2371,7 +2371,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 942136319}
-  enemyStats: {fileID: 1892474032}
   playerAnimationController: {fileID: 942136318}
 --- !u!4 &1754302683 stripped
 Transform:
@@ -2484,18 +2483,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1892474032 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3565303593564287395, guid: 62dcba975a0bdfe47bef48ea43049412,
-    type: 3}
-  m_PrefabInstance: {fileID: 1984824697}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1621f58aad1e22c43a77ccb0c054a4ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1918339513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,11 +2736,6 @@ PrefabInstance:
       propertyPath: levelHandeler
       value: 
       objectReference: {fileID: 942136320}
-    - target: {fileID: 3565303593564287395, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: playerLevelingHandeler
-      value: 
-      objectReference: {fileID: 942136320}
     - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2814,16 +2796,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8380844170633094570, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 942136314}
-    - target: {fileID: 8380844170633094570, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: PlayerStats
-      value: 
-      objectReference: {fileID: 942136319}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

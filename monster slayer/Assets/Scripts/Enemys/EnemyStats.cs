@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    public LevelHandeler levelHandeler;
+    private LevelHandeler playerLevel;
+
+    private GameObject playerObj;
 
     public float enemyHealth;
     public float maxEnemyHealth;
     public float enemyDamage;
 
+
+    private void Awake()
+    {
+        playerObj = GameObject.Find("playerObj");
+        playerLevel = playerObj.GetComponent<LevelHandeler>();
+    }
     private void Update()
     {
         if (enemyHealth <= 0)
         {
-            levelHandeler.currentXp += 3;
+            playerLevel.currentXp += 3;
             Destroy(gameObject);
         }
     }

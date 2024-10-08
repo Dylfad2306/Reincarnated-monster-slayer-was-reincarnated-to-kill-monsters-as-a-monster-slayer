@@ -5,7 +5,6 @@ using UnityEngine;
 public class SwordDameger : MonoBehaviour
 {
     public PlayerStats playerStats;
-    public EnemyStats enemyStats;
     public playerAnimationController playerAnimationController;
 
 
@@ -17,11 +16,9 @@ public class SwordDameger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("hello");
         if (other.gameObject.tag == "Enemy")
         {
-            print("Hello ita me merbio");
-            enemyStats.enemyHealth -= playerStats.playerDamage;
+            other.gameObject.GetComponent<EnemyStats>().enemyHealth -= playerStats.playerDamage;
         }
     }
 

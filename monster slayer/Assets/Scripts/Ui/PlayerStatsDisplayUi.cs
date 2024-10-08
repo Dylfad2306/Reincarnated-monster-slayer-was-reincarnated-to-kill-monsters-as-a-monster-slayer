@@ -24,6 +24,9 @@ public class PlayerStatsDisplayUi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        LevelHandeler.currentXp = Mathf.Round(LevelHandeler.currentXp);
+
         playerHealthText.text = "HEALTH: " + PlayerStats.playerHealth.ToString();
         playerxpState.text = LevelHandeler.currentXp.ToString() + "/" + LevelHandeler.recuiredXp.ToString() + " XP";
         playerCurrentLevelText.text = "LEVEL: " + LevelHandeler.playerLevel.ToString();
