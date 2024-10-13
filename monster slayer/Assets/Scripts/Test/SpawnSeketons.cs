@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class SpawnSeketons : MonoBehaviour
 {
     public GameObject skeletonPreFab;
     public Transform spawnLocation;
+    private float spawnchanse;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,13 @@ public class SpawnSeketons : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
+        {
+            GameObject SkeletonSpawner = Instantiate(skeletonPreFab, spawnLocation.position, spawnLocation.rotation);
+        }
+        spawnchanse = UnityEngine.Random.Range(1f, 100f);
+        spawnchanse = Mathf.Clamp(spawnchanse, 1f, 100f);
+        Debug.Log("Number: " + spawnchanse); 
+        if (spawnchanse >= 3 && spawnchanse <= 4)
         {
             GameObject SkeletonSpawner = Instantiate(skeletonPreFab, spawnLocation.position, spawnLocation.rotation);
         }

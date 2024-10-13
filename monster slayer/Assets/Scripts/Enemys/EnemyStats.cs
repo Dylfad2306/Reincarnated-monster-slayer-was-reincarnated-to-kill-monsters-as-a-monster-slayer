@@ -22,7 +22,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (enemyHealth <= 0)
         {
-            playerLevel.currentXp += 3;
+            //playerLevel.currentXp += 3;
             Destroy(gameObject);
         }
     }

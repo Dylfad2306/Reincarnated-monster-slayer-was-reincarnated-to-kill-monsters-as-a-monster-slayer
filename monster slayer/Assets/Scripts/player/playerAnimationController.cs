@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class playerAnimationController : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class playerAnimationController : MonoBehaviour
     int velocityZHash;
     int velocityXHash;
     int readyToAttackHash;
+    int attackAnimationHash;
+
+    public string GreatSwordSlash;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,10 @@ public class playerAnimationController : MonoBehaviour
         velocityZHash = Animator.StringToHash("velocity Z");
         velocityXHash = Animator.StringToHash("velocity X");
         readyToAttackHash = Animator.StringToHash("readyToAttack");
+
+        // Convert the attack animation state name to a hash for faster comparison
+        attackAnimationHash = Animator.StringToHash(GreatSwordSlash);
+        print(GreatSwordSlash);
     }
 
     void changeVelocity(bool forwardpressed, bool BackwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
@@ -141,17 +149,20 @@ public class playerAnimationController : MonoBehaviour
         }
     }
 
-    void attackAnimation(bool leftClick)
+    void attackAnimationFunction(bool leftClick)
     {
         if (leftClick)
         {
             readyToAttack = true;
         }
+
         if (!leftClick)
         {
             readyToAttack = false;
         }
     }
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -166,7 +177,7 @@ public class playerAnimationController : MonoBehaviour
 
         changeVelocity(forwardpressed, BackwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         lockOrResetVelocity(forwardpressed, BackwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
-        attackAnimation(leftClick);
+        attackAnimationFunction(leftClick);
 
         animator.SetFloat(velocityZHash, velocityZ);
         animator.SetFloat(velocityXHash, velocityX);
