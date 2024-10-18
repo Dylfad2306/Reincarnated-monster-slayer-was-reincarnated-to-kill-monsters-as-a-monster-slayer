@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityUnlocker : MonoBehaviour
+public class LevelAbilityCheck : MonoBehaviour
 {
     LevelHandeler PlayerLevel;
+    PlayerAbilityUnlock PlayerAbility;
 
 
     private void Start()
     {
         PlayerLevel = GetComponent<LevelHandeler>();
+        PlayerAbility = GetComponent<PlayerAbilityUnlock>();
     }
 
     private void Update()
@@ -20,7 +22,7 @@ public class AbilityUnlocker : MonoBehaviour
     {
         if (PlayerLevel.playerLevel == 2)
         {
-            //unlockFireBall();
+            PlayerAbility.unlockFireBall();
         }
     }
 }

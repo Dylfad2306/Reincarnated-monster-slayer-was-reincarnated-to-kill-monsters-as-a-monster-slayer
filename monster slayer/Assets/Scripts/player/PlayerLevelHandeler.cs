@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LevelHandeler : MonoBehaviour
 {
-    AbilityUnlocker unlockAbilitys;
+    LevelAbilityCheck AbilityCheck;
 
     float currentXp = 0;
     float requirerdXp = 10;
@@ -13,7 +13,7 @@ public class LevelHandeler : MonoBehaviour
 
     private void Start()
     {
-        unlockAbilitys = GetComponent<AbilityUnlocker>();
+        AbilityCheck = GetComponent<LevelAbilityCheck>();
     }
 
     void Update()
@@ -29,6 +29,6 @@ public class LevelHandeler : MonoBehaviour
         playerLevel++;
         currentXp = 0;
         requirerdXp *= 1.15f;
-        unlockAbilitys.AbilityLevelUnlocker();
+        AbilityCheck.AbilityLevelUnlocker();
     }
 }

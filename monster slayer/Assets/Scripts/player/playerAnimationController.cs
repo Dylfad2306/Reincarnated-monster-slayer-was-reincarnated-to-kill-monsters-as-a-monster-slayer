@@ -33,7 +33,6 @@ public class playerAnimationController : MonoBehaviour
 
         // Convert the attack animation state name to a hash for faster comparison
         attackAnimationHash = Animator.StringToHash(GreatSwordSlash);
-        print(GreatSwordSlash);
     }
 
     void changeVelocity(bool forwardpressed, bool BackwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)

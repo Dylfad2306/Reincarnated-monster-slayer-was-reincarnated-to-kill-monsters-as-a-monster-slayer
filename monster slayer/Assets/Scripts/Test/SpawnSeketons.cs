@@ -23,7 +23,6 @@ public class SpawnSeketons : MonoBehaviour
         }
         spawnchanse = UnityEngine.Random.Range(1f, 100f);
         spawnchanse = Mathf.Clamp(spawnchanse, 1f, 100f);
-        Debug.Log("Number: " + spawnchanse); 
         if (spawnchanse >= 3 && spawnchanse <= 4)
         {
             GameObject SkeletonSpawner = Instantiate(skeletonPreFab, spawnLocation.position, spawnLocation.rotation);
