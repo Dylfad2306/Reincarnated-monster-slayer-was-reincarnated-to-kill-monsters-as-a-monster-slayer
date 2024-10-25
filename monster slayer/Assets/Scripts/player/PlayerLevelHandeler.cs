@@ -7,8 +7,8 @@ public class LevelHandeler : MonoBehaviour
 {
     LevelAbilityCheck AbilityCheck;
 
-    float currentXp = 0;
-    float requirerdXp = 10;
+    public float currentXp = 0;
+    public float requirerdXp = 10;
     public int playerLevel = 1;
 
     private void Start()

@@ -1,0 +1,43 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:ScrollView name="ScrollView" style="height: auto;" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: auto; justify-content: flex-start; align-self: auto; width: auto; flex-shrink: 1; flex-wrap: nowrap; margin-top: 25px; margin-right: 25px; margin-left: 25px; min-height: 40%; max-height: 0;">
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 200px; min-height: 250px; left: auto; top: auto; justify-content: flex-start; align-self: flex-start; align-items: center; flex-basis: auto; flex-shrink: 0; flex-grow: 0; margin-left: 0; margin-bottom: 0; margin-right: 0; margin-top: 0; translate: 0 0; rotate: 0; transition-property: all; transition-duration: 0s; transition-timing-function: ease; transition-delay: 0s;">
+            <ui:Label tabindex="-1" text="LabelName" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardName" />
+            <ui:VisualElement style="flex-grow: 1; height: auto; width: 103px; min-height: 100px; max-height: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4584671053970592468&amp;guid=cb0ab5b7d5192364f8d529d4ba7e1500&amp;type=3#console.warnicon&quot;);" />
+            <ui:Label tabindex="-1" text="CardLevel: 0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardLevel" />
+            <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelUp" style="font-size: 32px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: 28px; width: 20px;" />
+        </ui:Button>
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 200px; min-height: 250px; left: auto; top: auto; justify-content: flex-start; align-self: flex-start; align-items: center; flex-basis: auto; flex-shrink: 0; flex-grow: 0; margin-left: 110px; margin-bottom: 0; margin-right: 0; margin-top: 0;">
+            <ui:Label tabindex="-1" text="LabelName" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardName" />
+            <ui:VisualElement style="flex-grow: 1; height: auto; width: 103px; min-height: 100px; max-height: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4584671053970592468&amp;guid=cb0ab5b7d5192364f8d529d4ba7e1500&amp;type=3#console.warnicon&quot;);" />
+            <ui:Label tabindex="-1" text="CardLevel: 0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardLevel" />
+            <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelUp" style="font-size: 32px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: 28px; width: 20px;" />
+        </ui:Button>
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 200px; min-height: 250px; left: auto; top: auto; justify-content: flex-start; align-self: flex-start; align-items: center; flex-basis: auto; flex-shrink: 0; flex-grow: 0; margin-left: 110px; margin-bottom: 0; margin-right: 0; margin-top: 0;">
+            <ui:Label tabindex="-1" text="LabelName" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardName" />
+            <ui:VisualElement style="flex-grow: 1; height: auto; width: 103px; min-height: 100px; max-height: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4584671053970592468&amp;guid=cb0ab5b7d5192364f8d529d4ba7e1500&amp;type=3#console.warnicon&quot;);" />
+            <ui:Label tabindex="-1" text="CardLevel: 0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardLevel" />
+            <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelUp" style="font-size: 32px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: 28px; width: 20px;" />
+        </ui:Button>
+    </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: auto; justify-content: flex-start; align-self: auto; width: auto; flex-shrink: 1; flex-wrap: nowrap; margin-top: 25px; margin-right: 25px; margin-left: 25px; min-height: 40%; max-height: 0;">
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 200px; min-height: 250px; left: auto; top: auto; justify-content: flex-start; align-self: flex-start; align-items: center; flex-basis: auto; flex-shrink: 0; flex-grow: 0; margin-left: 0; margin-bottom: 0; margin-right: 0; margin-top: 0;">
+            <ui:Label tabindex="-1" text="LabelName" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardName" />
+            <ui:VisualElement style="flex-grow: 1; height: auto; width: 103px; min-height: 100px; max-height: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4584671053970592468&amp;guid=cb0ab5b7d5192364f8d529d4ba7e1500&amp;type=3#console.warnicon&quot;);" />
+            <ui:Label tabindex="-1" text="CardLevel: 0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardLevel" />
+            <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelUp" style="font-size: 32px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: 28px; width: 20px;" />
+        </ui:Button>
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 200px; min-height: 250px; left: auto; top: auto; justify-content: flex-start; align-self: flex-start; align-items: center; flex-basis: auto; flex-shrink: 0; flex-grow: 0; margin-left: 110px; margin-bottom: 0; margin-right: 0; margin-top: 0;">
+            <ui:Label tabindex="-1" text="LabelName" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardName" />
+            <ui:VisualElement style="flex-grow: 1; height: auto; width: 103px; min-height: 100px; max-height: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4584671053970592468&amp;guid=cb0ab5b7d5192364f8d529d4ba7e1500&amp;type=3#console.warnicon&quot;);" />
+            <ui:Label tabindex="-1" text="CardLevel: 0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardLevel" />
+            <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelUp" style="font-size: 32px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: 28px; width: 20px;" />
+        </ui:Button>
+        <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 200px; min-height: 250px; left: auto; top: auto; justify-content: flex-start; align-self: flex-start; align-items: center; flex-basis: auto; flex-shrink: 0; flex-grow: 0; margin-left: 110px; margin-bottom: 0; margin-right: 0; margin-top: 0;">
+            <ui:Label tabindex="-1" text="LabelName" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardName" />
+            <ui:VisualElement style="flex-grow: 1; height: auto; width: 103px; min-height: 100px; max-height: 0; background-image: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=4584671053970592468&amp;guid=cb0ab5b7d5192364f8d529d4ba7e1500&amp;type=3#console.warnicon&quot;);" />
+            <ui:Label tabindex="-1" text="CardLevel: 0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CardLevel" />
+            <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LevelUp" style="font-size: 32px; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; height: 28px; width: 20px;" />
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>
