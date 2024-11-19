@@ -1,0 +1,54 @@
+.card-holder {
+}
+
+.card-holder-inner {
+    align-items: flex-start;
+    align-self: auto;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: auto;
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    align-self: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 0;
+    margin-top: 15px;
+    margin-right: 0;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.card-titel {
+    font-size: 30px;
+}
+
+.card-description {
+    height: 75px;
+    font-size: 20px;
+}
+
+.card-level {
+    font-size: 20px;
+}
+
+.card-xp {
+    font-size: 20px;
+}
+
+.card-button {
+    margin-top: 25px;
+    width: 200px;
+    height: 250px;
+    margin-right: 0;
+    margin-left: 25px;
+    font-size: 20px;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: flex-end;
+}

@@ -1,0 +1,22 @@
+.catagory-body {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.passivAbilitys {
+    width: 200px;
+    height: 350px;
+    font-size: 27px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ActiveAbilitys {
+    width: 200px;
+    height: 350px;
+    margin-left: 100px;
+    font-size: 29px;
+    justify-content: center;
+    align-items: center;
+}
