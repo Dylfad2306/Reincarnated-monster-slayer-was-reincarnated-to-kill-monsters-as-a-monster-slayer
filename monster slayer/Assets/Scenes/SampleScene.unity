@@ -2079,10 +2079,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb9fd8a221d4834ebac4485f95a896d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _document: {fileID: 1265387199}
-  _styleSheet: {fileID: 7433441132597879392, guid: b2a075cc04170694787a1b13f081436b,
+  document: {fileID: 1265387199}
+  styleSheet: {fileID: 7433441132597879392, guid: b2a075cc04170694787a1b13f081436b,
     type: 3}
-  _lol: 0
+  lol: 0.43
 --- !u!1 &1425004598
 GameObject:
   m_ObjectHideFlags: 0

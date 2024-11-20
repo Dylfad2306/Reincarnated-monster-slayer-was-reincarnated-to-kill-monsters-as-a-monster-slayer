@@ -1,56 +1,60 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class createcatagorys : MonoBehaviour
+namespace Ui.Abilitys
 {
-    [SerializeField] private UIDocument _document;
-    [SerializeField] private StyleSheet _styleSheet;
-
-    [SerializeField] private float _lol;
-
-    private void Start()
+    public class Createcatagorys : MonoBehaviour
     {
-        Generate();
-    }
-    private void OnValidate()
-    {
-        Generate();
-    }
+        [SerializeField] private UIDocument document;
+        [SerializeField] private StyleSheet styleSheet;
 
-    void Generate()
-    {
-        var root = _document.rootVisualElement;
+        [SerializeField] private float lol;
 
-        root.Clear();
-
-        root.styleSheets.Add(_styleSheet);
-
-        root.AddToClassList("catagory-body");
-
-
-        var PassivAbilitys = Create<Button>("passivAbilitys");
-        var ActiveAbilitys = Create<Button>("ActiveAbilitys");
-        // add a way to give ability text a text
-        var PassivAbilitysText = Create<TextField>();
-        var ActiveAbilityText = Create<TextField>();
-
-        PassivAbilitys.Add(PassivAbilitysText);
-        ActiveAbilitys.Add(ActiveAbilityText);
-
-
-        root.Add(PassivAbilitys);
-        root.Add(ActiveAbilitys);
-    }
-
-    T Create<T>(params string[] classNames) where T : VisualElement, new()
-    {
-        var ele = new T();
-        foreach (var className in classNames)
+        private void Start()
         {
-            ele.AddToClassList(className);
+            Generate();
         }
-        return ele;
+        private void OnValidate()
+        {
+            Generate();
+        }
+
+        void Generate()
+        {
+            var root = document.rootVisualElement;
+
+            root.Clear();
+
+            root.styleSheets.Add(styleSheet);
+
+            root.AddToClassList("catagory-body");
+
+
+            var passivAbilitys = Create<Button>();
+            var activeAbilitys = Create<Button>("ActiveAbilitys");
+            var passivAbilitysText = Create<Label>();
+            var activeAbilityText = Create<Label>();
+
+            passivAbilitysText.text = "hello!";
+            activeAbilityText.text = "Hello!";
+
+
+            passivAbilitys.Add(passivAbilitysText);
+            activeAbilitys.Add(activeAbilityText);
+
+
+            root.Add(passivAbilitys);
+            root.Add(activeAbilitys);
+        }
+
+        T Create<T>(params string[] classNames) where T : VisualElement, new()
+        {
+            var ele = new T();
+            foreach (var className in classNames)
+            {
+                ele.AddToClassList(className);
+            }
+            return ele;
+        }
     }
 }
