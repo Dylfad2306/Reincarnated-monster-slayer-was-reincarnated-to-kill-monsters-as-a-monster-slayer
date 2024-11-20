@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Ui.Abilitys;
 using UnityEngine;
 
 public class LevelAbilityCheck : MonoBehaviour
 {
     LevelHandeler PlayerLevel;
     PlayerAbilityUnlock PlayerAbility;
+    CreateActiveAbilitys createActiveAbilitys;
 
 
     private void Start()
@@ -22,7 +24,7 @@ public class LevelAbilityCheck : MonoBehaviour
     {
         if (PlayerLevel.playerLevel == 2)
         {
-            PlayerAbility.unlockFireBall();
+            //createActiveAbilitys.createCards();
         }
     }
 }

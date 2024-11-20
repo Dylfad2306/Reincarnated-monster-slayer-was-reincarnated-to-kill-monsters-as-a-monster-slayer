@@ -6,9 +6,13 @@
 Button {
     width: 300px;
     height: 400px;
-    font-size: 40px;
+    font-size: 35px;
     align-items: center;
+}
+Button:hover {
+    background-color: crimson;
 }
 .ActiveAbilitys {
     margin-left: 100px;
+    font-size: 38px;
 }

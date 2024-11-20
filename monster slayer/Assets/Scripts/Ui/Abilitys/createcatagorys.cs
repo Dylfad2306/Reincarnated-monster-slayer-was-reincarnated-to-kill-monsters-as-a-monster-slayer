@@ -1,5 +1,8 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 namespace Ui.Abilitys
 {
@@ -9,45 +12,78 @@ namespace Ui.Abilitys
         [SerializeField] private StyleSheet styleSheet;
 
         [SerializeField] private float lol;
+        
+        private VisualElement passivAbilitys;
+        private VisualElement activeAbilitys;
+        public CreateActiveAbilitys createActiveAbilitys;
+        
+        private bool isUIVisible = false;
 
-        private void Start()
+        private void Update()
         {
-            Generate();
-        }
-        private void OnValidate()
-        {
-            Generate();
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                if (isUIVisible)
+                {
+                    isUIVisible = false;
+                    RemoveGeneratedUI();
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
+                else
+                {
+                    isUIVisible = true;
+                    Generate();
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
+                }
+            }
         }
 
-        void Generate()
+        private void Generate()
         {
             var root = document.rootVisualElement;
-
-            root.Clear();
-
+            
             root.styleSheets.Add(styleSheet);
 
             root.AddToClassList("catagory-body");
-
-
+            
             var passivAbilitys = Create<Button>();
             var activeAbilitys = Create<Button>("ActiveAbilitys");
             var passivAbilitysText = Create<Label>();
             var activeAbilityText = Create<Label>();
 
-            passivAbilitysText.text = "hello!";
-            activeAbilityText.text = "Hello!";
-
-
+            passivAbilitysText.text = "Passive ability's!";
+            activeAbilityText.text = "Active ability's!";
+            
             passivAbilitys.Add(passivAbilitysText);
             activeAbilitys.Add(activeAbilityText);
 
-
+            passivAbilitys.clicked += PassivAbilitysOnclicked;
+            activeAbilitys.clicked += ActiveAbilitysOnclicked;
+            
             root.Add(passivAbilitys);
             root.Add(activeAbilitys);
         }
-
-        T Create<T>(params string[] classNames) where T : VisualElement, new()
+        private void RemoveGeneratedUI()
+        {
+            var root = document.rootVisualElement;
+            
+            root.Clear();
+        }
+        
+        void PassivAbilitysOnclicked()
+        {
+            //showes passive abilitys and generate them
+        }
+        void ActiveAbilitysOnclicked()
+        {
+            //showes active abilitys and generate them
+            RemoveGeneratedUI();
+            //createActiveAbilitys.createCards();
+            
+        }
+        private T Create<T>(params string[] classNames) where T : VisualElement, new()
         {
             var ele = new T();
             foreach (var className in classNames)
