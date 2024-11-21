@@ -1,5 +1,4 @@
-using System;
-using Unity.VisualScripting;
+using Abiletys;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
@@ -10,29 +9,24 @@ namespace Ui.Abilitys
     {
         [SerializeField] private UIDocument document;
         [SerializeField] private StyleSheet styleSheet;
-
-        [SerializeField] private float lol;
         
-        private VisualElement passivAbilitys;
-        private VisualElement activeAbilitys;
-        public CreateActiveAbilitys createActiveAbilitys;
+        public LevelAbilityCheck abilityCheck;
         
-        private bool isUIVisible = false;
-
+        private bool _isUIVisible = false;
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.B))
             {
-                if (isUIVisible)
+                if (_isUIVisible)
                 {
-                    isUIVisible = false;
+                    _isUIVisible = false;
                     RemoveGeneratedUI();
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
                 }
                 else
                 {
-                    isUIVisible = true;
+                    _isUIVisible = true;
                     Generate();
                     Cursor.lockState = CursorLockMode.Confined;
                     Cursor.visible = true;
@@ -75,13 +69,14 @@ namespace Ui.Abilitys
         void PassivAbilitysOnclicked()
         {
             //showes passive abilitys and generate them
+            RemoveGeneratedUI();
+            abilityCheck.PassiveAbilityLevelUnlocker();
         }
         void ActiveAbilitysOnclicked()
         {
             //showes active abilitys and generate them
             RemoveGeneratedUI();
-            //createActiveAbilitys.createCards();
-            
+            abilityCheck.ActiveAbilityLevelUnlocker();
         }
         private T Create<T>(params string[] classNames) where T : VisualElement, new()
         {

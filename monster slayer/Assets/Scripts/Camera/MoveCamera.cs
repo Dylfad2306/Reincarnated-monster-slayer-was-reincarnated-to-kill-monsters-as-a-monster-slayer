@@ -1,52 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveCamera : MonoBehaviour
+namespace Camera
 {
-    public Transform firstPersonCameraPosition;
-    public Transform thirdPersonCameraPosition;
-    bool firstPerson = true;
-    bool thirdPerson = false;
-
-    private void Start()
+    public class MoveCamera : MonoBehaviour
     {
-        
-    }
+        public Transform firstPersonCameraPosition;
+        public Transform thirdPersonCameraPosition;
+        bool firstPerson = true;
+        bool thirdPerson = false;
 
-    void Update()
-    {
-        bool SwitchPerspective = Input.GetKey("h");
-        
-        
-        if (SwitchPerspective)
+        private void Start()
         {
+        
+        }
+
+        void Update()
+        {
+            bool SwitchPerspective = Input.GetKey("h");
+        
+        
+            if (SwitchPerspective)
+            {
+                if (firstPerson)
+                {
+                    firstPerson = false;
+                    thirdPerson = true;
+                }
+                else
+                {
+                    firstPerson = true;
+                    thirdPerson = false;
+                }
+            }
+
             if (firstPerson)
             {
-                firstPerson = false;
-                thirdPerson = true;
+                transform.position = firstPersonCameraPosition.position;
+                transform.rotation = firstPersonCameraPosition.rotation;
             }
-            else
+            else if (thirdPerson)
             {
-                firstPerson = true;
-                thirdPerson = false;
+                transform.position = thirdPersonCameraPosition.position;
+                transform.rotation = thirdPersonCameraPosition.rotation;
             }
-        }
-
-        if (firstPerson)
-        {
-            transform.position = firstPersonCameraPosition.position;
-            transform.rotation = firstPersonCameraPosition.rotation;
-        }
-        else if (thirdPerson)
-        {
-            transform.position = thirdPersonCameraPosition.position;
-            transform.rotation = thirdPersonCameraPosition.rotation;
-        }
 
 
 
 
         
+        }
     }
 }

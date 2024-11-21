@@ -1,14 +1,15 @@
+using Test;
 using UnityEngine;
 
 namespace Ui.Abilitys
 {
-    public class showOrHideAbilitys : MonoBehaviour
+    public class ShowOrHideAbilitys : MonoBehaviour
     {
         public GameObject abilityMenu;
 
         public SpawnSeketons spawnSeketons;
 
-        bool gameIsPaused;
+        bool _gameIsPaused;
 
         private void Start()
         {
@@ -19,7 +20,7 @@ namespace Ui.Abilitys
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
-                if (!gameIsPaused)
+                if (!_gameIsPaused)
                 {
                     // opens menu
                     abilityMenu.SetActive(true);
@@ -27,7 +28,7 @@ namespace Ui.Abilitys
                     Cursor.lockState = CursorLockMode.Confined;
                     Cursor.visible = true;
                     Time.timeScale = 0f;
-                    gameIsPaused = true;
+                    _gameIsPaused = true;
                 }
                 else
                 {
@@ -37,7 +38,7 @@ namespace Ui.Abilitys
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
                     Time.timeScale = 1f;
-                    gameIsPaused = false;
+                    _gameIsPaused = false;
                 }
             }
         }

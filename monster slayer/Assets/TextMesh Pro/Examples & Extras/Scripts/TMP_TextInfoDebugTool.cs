@@ -1,10 +1,9 @@
 ﻿using System;
-using UnityEngine;
-using System.Collections;
+using TMPro;
 using UnityEditor;
+using UnityEngine;
 
-
-namespace TMPro.Examples
+namespace TextMesh_Pro.Examples___Extras.Scripts
 {
 
     public class TMP_TextInfoDebugTool : MonoBehaviour
@@ -637,7 +636,7 @@ namespace TMPro.Examples
         // Draw Rectangles
         void DrawDottedRectangle(Vector3 bl, Vector3 tl, Vector3 tr, Vector3 br, Color color)
         {
-            var cam = Camera.current;
+            var cam = UnityEngine.Camera.current;
             float dotSpacing = (cam.WorldToScreenPoint(br).x - cam.WorldToScreenPoint(bl).x) / 75f;
             UnityEditor.Handles.color = color;
 

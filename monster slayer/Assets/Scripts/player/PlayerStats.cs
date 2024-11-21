@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+namespace player
 {
-    public GameObject cameraObject;
-
-    public float playerHealth;
-    public float playerDamage;
-
-    private void Update()
+    public class PlayerStats : MonoBehaviour
     {
-        if (playerHealth <= 0)
+        public GameObject cameraObject;
+
+        public float playerHealth;
+        public float playerDamage;
+
+        private void Update()
         {
-            //Destroy(gameObject);
-            //Destroy(cameraObject);
+            if (playerHealth <= 0)
+            {
+                //Destroy(gameObject);
+                //Destroy(cameraObject);
+            }
         }
     }
 }

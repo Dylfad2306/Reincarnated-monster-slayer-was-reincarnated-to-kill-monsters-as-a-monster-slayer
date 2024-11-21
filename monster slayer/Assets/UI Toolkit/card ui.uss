@@ -1,7 +1,4 @@
 .card-holder {
-}
-
-.card-holder-inner {
     align-items: flex-start;
     align-self: auto;
     justify-content: center;
@@ -12,12 +9,12 @@
 }
 
 .card {
-    width: 200px;
-    height: 250px;
-    align-self: auto;
-    justify-content: center;
-    align-items: center;
+    width: 250px;
+    height: 350px;
     font-size: 0;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 15px;
     margin-right: 0;
     margin-left: 25px;
@@ -25,30 +22,21 @@
 }
 
 .card-titel {
-    font-size: 30px;
+    font-size: 28px;
+    color: crimson;
 }
-
+/*fix so that the text continus on the next row*/
 .card-description {
     height: 75px;
-    font-size: 20px;
+    width: 240px;
+    font-size: 25px;
 }
 
 .card-level {
-    font-size: 20px;
+    font-size: 27px;
+    color: crimson;
 }
 
 .card-xp {
-    font-size: 20px;
-}
-
-.card-button {
-    margin-top: 25px;
-    width: 200px;
-    height: 250px;
-    margin-right: 0;
-    margin-left: 25px;
-    font-size: 20px;
-    align-self: flex-start;
-    align-items: center;
-    justify-content: flex-end;
+    font-size: 27px;
 }

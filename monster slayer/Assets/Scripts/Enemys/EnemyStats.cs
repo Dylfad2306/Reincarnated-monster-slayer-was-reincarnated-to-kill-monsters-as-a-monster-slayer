@@ -1,29 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
+using player;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour
+namespace Enemys
 {
-    private LevelHandeler playerLevel;
-
-    private GameObject playerObj;
-
-    public float enemyHealth;
-    public float maxEnemyHealth;
-    public float enemyDamage;
-
-
-    private void Awake()
+    public class EnemyStats : MonoBehaviour
     {
-        playerObj = GameObject.Find("playerObj");
-        playerLevel = playerObj.GetComponent<LevelHandeler>();
-    }
-    private void Update()
-    {
-        if (enemyHealth <= 0)
+        private LevelHandeler playerLevel;
+
+        private GameObject playerObj;
+
+        public float enemyHealth;
+        public float maxEnemyHealth;
+        public float enemyDamage;
+
+
+        private void Awake()
         {
-            playerLevel.currentXp += 3;
-            Destroy(gameObject);
+            playerObj = GameObject.Find("playerObj");
+            playerLevel = playerObj.GetComponent<LevelHandeler>();
+        }
+        private void Update()
+        {
+            if (enemyHealth <= 0)
+            {
+                playerLevel.currentXp += 3;
+                Destroy(gameObject);
+            }
         }
     }
 }

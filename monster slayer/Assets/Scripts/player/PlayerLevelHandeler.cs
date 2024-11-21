@@ -1,34 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.XPath;
+using Abiletys;
 using UnityEngine;
 
-public class LevelHandeler : MonoBehaviour
+namespace player
 {
-    LevelAbilityCheck AbilityCheck;
-
-    public float currentXp = 0;
-    public float requirerdXp = 10;
-    public int playerLevel = 1;
-
-    private void Start()
+    public class LevelHandeler : MonoBehaviour
     {
-        AbilityCheck = GetComponent<LevelAbilityCheck>();
-    }
+        LevelAbilityCheck AbilityCheck;
 
-    void Update()
-    {
-        if (currentXp >= requirerdXp)
+        public float currentXp = 0;
+        public float requirerdXp = 10;
+        public int playerLevel = 1;
+
+        private void Start()
         {
-            PlayerLevelUp();
+            AbilityCheck = GetComponent<LevelAbilityCheck>();
         }
-    }
 
-    void PlayerLevelUp()
-    {
-        playerLevel++;
-        currentXp = 0;
-        requirerdXp *= 1.15f;
-        AbilityCheck.AbilityLevelUnlocker();
+        void Update()
+        {
+            if (currentXp >= requirerdXp)
+            {
+                PlayerLevelUp();
+            }
+        }
+
+        void PlayerLevelUp()
+        {
+            playerLevel++;
+            currentXp = 0;
+            requirerdXp *= 1.15f;
+        }
     }
 }

@@ -1,8 +1,7 @@
+using TMPro;
 using UnityEngine;
-using System.Collections;
 
-
-namespace TMPro.Examples
+namespace TextMesh_Pro.Examples___Extras.Scripts
 {
     
     public class Benchmark04 : MonoBehaviour
@@ -24,7 +23,7 @@ namespace TMPro.Examples
             m_Transform = transform;
 
             float lineHeight = 0;
-            float orthoSize = Camera.main.orthographicSize = Screen.height / 2;
+            float orthoSize = UnityEngine.Camera.main.orthographicSize = Screen.height / 2;
             float ratio = (float)Screen.width / Screen.height;
 
             for (int i = MinPointSize; i <= MaxPointSize; i += Steps)

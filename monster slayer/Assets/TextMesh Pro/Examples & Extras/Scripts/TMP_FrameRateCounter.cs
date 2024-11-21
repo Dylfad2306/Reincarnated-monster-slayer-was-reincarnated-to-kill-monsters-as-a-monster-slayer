@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using TMPro;
+using UnityEngine;
 
-
-namespace TMPro.Examples
+namespace TextMesh_Pro.Examples___Extras.Scripts
 {
     
     public class TMP_FrameRateCounter : MonoBehaviour
@@ -20,7 +19,7 @@ namespace TMPro.Examples
 
         private TextMeshPro m_TextMeshPro;
         private Transform m_frameCounter_transform;
-        private Camera m_camera;
+        private UnityEngine.Camera m_camera;
 
         private FpsCounterAnchorPositions last_AnchorPosition;
 
@@ -29,7 +28,7 @@ namespace TMPro.Examples
             if (!enabled)
                 return;
 
-            m_camera = Camera.main;
+            m_camera = UnityEngine.Camera.main;
             Application.targetFrameRate = 9999;
 
             GameObject frameCounter = new GameObject("Frame Counter");

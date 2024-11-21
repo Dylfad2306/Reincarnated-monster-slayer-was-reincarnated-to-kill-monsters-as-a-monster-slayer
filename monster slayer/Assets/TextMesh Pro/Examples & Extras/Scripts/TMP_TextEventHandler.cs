@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using TMPro;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using System;
 
-
-namespace TMPro
+namespace TextMesh_Pro.Examples___Extras.Scripts
 {
 
     public class TMP_TextEventHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -88,7 +88,7 @@ namespace TMPro
 
         private TMP_Text m_TextComponent;
 
-        private Camera m_Camera;
+        private UnityEngine.Camera m_Camera;
         private Canvas m_Canvas;
 
         private int m_selectedLink = -1;
@@ -115,7 +115,7 @@ namespace TMPro
             }
             else
             {
-                m_Camera = Camera.main;
+                m_Camera = UnityEngine.Camera.main;
             }
         }
 

@@ -1,8 +1,8 @@
-using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine;
 
-
-namespace TMPro.Examples
+namespace TextMesh_Pro.Examples___Extras.Scripts
 {
 
     public class TextMeshProFloatingText : MonoBehaviour
@@ -43,7 +43,7 @@ namespace TMPro.Examples
             //m_floatingText_Transform = m_floatingText.transform;
             //m_floatingText_Transform.position = m_transform.position + new Vector3(0, 15f, 0);
 
-            m_cameraTransform = Camera.main.transform;
+            m_cameraTransform = UnityEngine.Camera.main.transform;
         }
 
         void Start()

@@ -1,12 +1,11 @@
 // This script is optional, only for the demo scene
 
 #if UNITY_EDITOR
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace KevinIglesias
+namespace Kevin_Iglesias._3D_Character_Dummy._ExampleScene.Scripts
 {
     [ExecuteInEditMode]
     public class DummyRPMaterialLoader : MonoBehaviour

@@ -1,19 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAbilityUnlock : MonoBehaviour
+namespace Abiletys
 {
-
-    List<string>playerAbilitys = new List<string>();
-
-    [Header("Card objects")]
-    public GameObject fireCard;
-
-    public void unlockFireBall()
+    public class PlayerAbilityUnlock : MonoBehaviour
     {
-        fireCard.SetActive(true);
+
+        List<string>playerAbilitys = new List<string>();
+
+        [Header("Card objects")]
+        public GameObject fireCard;
+
+        public void unlockFireBall()
+        {
+            fireCard.SetActive(true);
+        }
+
+
     }
-
-
 }

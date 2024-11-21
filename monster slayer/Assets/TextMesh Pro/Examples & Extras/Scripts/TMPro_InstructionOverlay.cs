@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using TMPro;
+using UnityEngine;
 
-
-namespace TMPro.Examples
+namespace TextMesh_Pro.Examples___Extras.Scripts
 {
     
     public class TMPro_InstructionOverlay : MonoBehaviour
@@ -17,7 +16,7 @@ namespace TMPro.Examples
         private TextMeshPro m_TextMeshPro;
         private TextContainer m_textContainer;
         private Transform m_frameCounter_transform;
-        private Camera m_camera;
+        private UnityEngine.Camera m_camera;
 
         //private FpsCounterAnchorPositions last_AnchorPosition;
 
@@ -26,7 +25,7 @@ namespace TMPro.Examples
             if (!enabled)
                 return;
 
-            m_camera = Camera.main;
+            m_camera = UnityEngine.Camera.main;
 
             GameObject frameCounter = new GameObject("Frame Counter");
             m_frameCounter_transform = frameCounter.transform;

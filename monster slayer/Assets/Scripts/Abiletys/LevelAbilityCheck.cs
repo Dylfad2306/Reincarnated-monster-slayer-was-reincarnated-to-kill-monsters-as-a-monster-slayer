@@ -1,30 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
+using player;
 using Ui.Abilitys;
 using UnityEngine;
 
-public class LevelAbilityCheck : MonoBehaviour
+namespace Abiletys
 {
-    LevelHandeler PlayerLevel;
-    PlayerAbilityUnlock PlayerAbility;
-    CreateActiveAbilitys createActiveAbilitys;
-
-
-    private void Start()
+    public class LevelAbilityCheck : MonoBehaviour
     {
-        PlayerLevel = GetComponent<LevelHandeler>();
-        PlayerAbility = GetComponent<PlayerAbilityUnlock>();
-    }
+       public LevelHandeler PlayerLevel;
+       public CreateActiveAbilitys createActiveAbilitys;
 
-    private void Update()
-    {
-        //for (int i = 0; playerAbilitys[i] == "Fireball")
-    }
-    public void AbilityLevelUnlocker()
-    {
-        if (PlayerLevel.playerLevel == 2)
+        private string cardName;
+        private string cardDescription;
+        private int cardLevel;
+        private int cardXp;
+        public void ActiveAbilityLevelUnlocker()
         {
-            //createActiveAbilitys.createCards();
+            if (PlayerLevel.playerLevel >= 2)
+            {
+                cardName = "Fireball";
+                cardDescription = "castes a fire ball that sets the enemy on fire";
+                cardLevel = 0;
+                cardXp = 0;
+                createActiveAbilitys.CreateCards(cardName, cardDescription, cardLevel, cardXp);
+
+                cardName = "Rock shot";
+                cardDescription = "shoots a rock bullet";
+                cardLevel = 1;
+                cardXp = 5;
+                createActiveAbilitys.CreateCards(cardName, cardDescription, cardLevel, cardXp);
+            }
+        }
+
+        public void PassiveAbilityLevelUnlocker()
+        {
+            if (PlayerLevel.playerLevel >= 2)
+            {
+                
+            }
         }
     }
 }

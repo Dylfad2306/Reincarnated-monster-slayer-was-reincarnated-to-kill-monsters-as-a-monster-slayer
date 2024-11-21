@@ -1,109 +1,111 @@
-using System.Collections;
-using System.Collections.Generic;
+using player;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAi : MonoBehaviour
+namespace Enemys
 {
-    private PlayerStats PlayerStats;
-    public EnemyStats EnemyStats;
-    public EnemyHealthBar EnemyHealthBar;
-
-    public NavMeshAgent agent;
-
-    private Transform player;
-    private GameObject playerObj;
-
-    public LayerMask whatIsGround, whatIsPlayer;
-
-    //Patroling
-    public Vector3 walkPoint;
-    bool walkPointSet;
-    public float walkPointRange;
-
-    //Attacking
-    public float timeBetweenAttacks;
-    bool alreadyAttacked;
-
-    //State
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
-
-
-    private void Awake()
+    public class EnemyAi : MonoBehaviour
     {
-        EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
-        player = GameObject.Find("playerObj").transform;
-        playerObj = GameObject.Find("playerObj");
-        PlayerStats = playerObj.GetComponent<PlayerStats>();
-        agent = GetComponent<NavMeshAgent>();
-    }
+        private PlayerStats PlayerStats;
+        public EnemyStats EnemyStats;
+        public EnemyHealthBar EnemyHealthBar;
 
-    private void Update()
-    {
-        EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
+        public NavMeshAgent agent;
 
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        private Transform player;
+        private GameObject playerObj;
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
-    }
+        public LayerMask whatIsGround, whatIsPlayer;
 
-    private void Patroling()
-    {
-        if (!walkPointSet) SearchWalkPoint();
+        //Patroling
+        public Vector3 walkPoint;
+        bool walkPointSet;
+        public float walkPointRange;
 
-        if(walkPointSet)
+        //Attacking
+        public float timeBetweenAttacks;
+        bool alreadyAttacked;
+
+        //State
+        public float sightRange, attackRange;
+        public bool playerInSightRange, playerInAttackRange;
+
+
+        private void Awake()
         {
-            agent.SetDestination(walkPoint);
+            EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
+            player = GameObject.Find("playerObj").transform;
+            playerObj = GameObject.Find("playerObj");
+            PlayerStats = playerObj.GetComponent<PlayerStats>();
+            agent = GetComponent<NavMeshAgent>();
         }
 
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        if (distanceToWalkPoint.magnitude < 1f)
+        private void Update()
         {
-            walkPointSet = false;
+            EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
+
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+
+            if (!playerInSightRange && !playerInAttackRange) Patroling();
+            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+            if (playerInSightRange && playerInAttackRange) AttackPlayer();
         }
-    }
 
-    void SearchWalkPoint()
-    {
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        private void Patroling()
         {
-            walkPointSet = true;
+            if (!walkPointSet) SearchWalkPoint();
+
+            if(walkPointSet)
+            {
+                agent.SetDestination(walkPoint);
+            }
+
+            Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+            if (distanceToWalkPoint.magnitude < 1f)
+            {
+                walkPointSet = false;
+            }
         }
-    }
 
-    private void ChasePlayer()
-    {
-        agent.SetDestination(player.position);
-    }
-
-    private void AttackPlayer()
-    {
-        agent.SetDestination(transform.position);
-
-        transform.LookAt(player);
-
-        if (!alreadyAttacked)
+        void SearchWalkPoint()
         {
+            float randomZ = Random.Range(-walkPointRange, walkPointRange);
+            float randomX = Random.Range(-walkPointRange, walkPointRange);
 
-            PlayerStats.playerHealth -= EnemyStats.enemyDamage;
+            walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+            {
+                walkPointSet = true;
+            }
         }
-    }
 
-    private void ResetAttack()
-    {
-        alreadyAttacked = false;
+        private void ChasePlayer()
+        {
+            agent.SetDestination(player.position);
+        }
+
+        private void AttackPlayer()
+        {
+            agent.SetDestination(transform.position);
+
+            transform.LookAt(player);
+
+            if (!alreadyAttacked)
+            {
+
+                PlayerStats.playerHealth -= EnemyStats.enemyDamage;
+
+                alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            }
+        }
+
+        private void ResetAttack()
+        {
+            alreadyAttacked = false;
+        }
     }
 }
