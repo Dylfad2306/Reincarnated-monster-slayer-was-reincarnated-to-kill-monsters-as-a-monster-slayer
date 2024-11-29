@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,12 +8,33 @@ namespace Ui.Abilitys
     {
         [SerializeField] private UIDocument document;
         [SerializeField] private StyleSheet styleSheet;
+        [SerializeField] private AbilityManager abilityManager;
 
         private void OnValidate()
         {
             //CreateCards();
         }
-        public void CreateCards(string cardName, string cardDescription, int cardLevel, int cardXp)
+
+        public void createActiveAbilitysCard()
+        {
+            List<AbilityBehaviour> availableAbilities = abilityManager.GetActiveAbilities(); // Can also use GetActive or GetPassive
+            print(availableAbilities.Count);
+            foreach (AbilityBehaviour availableAbility in availableAbilities)
+            {
+                CreateCards(availableAbility.AbilityName, availableAbility.Description, availableAbility._abilityLevel, availableAbility._abilityExperience, availableAbility._experienceNeededToLevelUp);
+            }
+        }
+
+        public void createPassiveAbilityCard()
+        {
+            List<AbilityBehaviour> availableAbilities = abilityManager.GetPassiveAbilities(); // Can also use GetActive or GetPassive
+            foreach (AbilityBehaviour availableAbility in availableAbilities)
+            {
+                CreateCards(availableAbility.AbilityName, availableAbility.Description, availableAbility._abilityLevel, availableAbility._abilityExperience, availableAbility._experienceNeededToLevelUp);
+            }
+        }
+        
+        public void CreateCards(string cardName, string cardDescription, int cardLevel, int cardXp, int cardReqXp)
         {
             var root = document.rootVisualElement;
             
@@ -28,7 +50,7 @@ namespace Ui.Abilitys
             cardtitel.text = cardName;
             cardDec.text = cardDescription;
             level.text = cardLevel.ToString();
-            xp.text = cardXp.ToString();
+            xp.text = cardXp.ToString() + "/" + cardReqXp.ToString();
             
             cardHolder.Add(card);
             card.Add(cardtitel);

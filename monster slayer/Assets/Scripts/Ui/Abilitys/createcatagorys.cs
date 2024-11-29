@@ -1,3 +1,4 @@
+using System;
 using Abiletys;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -10,9 +11,10 @@ namespace Ui.Abilitys
         [SerializeField] private UIDocument document;
         [SerializeField] private StyleSheet styleSheet;
         
-        public LevelAbilityCheck abilityCheck;
+        public CreateActiveAbilitys CreateActiveAbilitys;
         
         private bool _isUIVisible = false;
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.B))
@@ -68,15 +70,16 @@ namespace Ui.Abilitys
         
         void PassivAbilitysOnclicked()
         {
+            print("Passivabilitys on clicked");
             //showes passive abilitys and generate them
             RemoveGeneratedUI();
-            abilityCheck.PassiveAbilityLevelUnlocker();
+            CreateActiveAbilitys.createPassiveAbilityCard();
         }
         void ActiveAbilitysOnclicked()
         {
             //showes active abilitys and generate them
             RemoveGeneratedUI();
-            abilityCheck.ActiveAbilityLevelUnlocker();
+            CreateActiveAbilitys.createActiveAbilitysCard();
         }
         private T Create<T>(params string[] classNames) where T : VisualElement, new()
         {

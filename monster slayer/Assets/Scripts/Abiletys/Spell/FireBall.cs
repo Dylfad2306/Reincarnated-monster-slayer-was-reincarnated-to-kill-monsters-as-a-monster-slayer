@@ -2,18 +2,12 @@ using UnityEngine;
 
 namespace Abiletys.Spell
 {
-    public class FireBall : MonoBehaviour
+    public class FireBall : ActiveAbility
     {
         // Start is called before the first frame update
-        void Start()
+        protected override void OnStartAbility()
         {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            SetAbilityInformation("FireBall", "ball of fire", 1, 2, 0 );
         }
     }
 }

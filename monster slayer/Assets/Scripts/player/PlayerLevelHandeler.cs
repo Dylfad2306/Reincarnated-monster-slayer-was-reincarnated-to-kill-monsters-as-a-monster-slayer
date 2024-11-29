@@ -5,7 +5,7 @@ namespace player
 {
     public class LevelHandeler : MonoBehaviour
     {
-        LevelAbilityCheck AbilityCheck;
+        //LevelAbilityCheck AbilityCheck;
 
         public float currentXp = 0;
         public float requirerdXp = 10;
@@ -13,7 +13,7 @@ namespace player
 
         private void Start()
         {
-            AbilityCheck = GetComponent<LevelAbilityCheck>();
+            //AbilityCheck = GetComponent<LevelAbilityCheck>();
         }
 
         void Update()
