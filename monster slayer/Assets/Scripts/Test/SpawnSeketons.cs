@@ -7,6 +7,8 @@ namespace Test
         public GameObject skeletonPreFab;
         public Transform spawnLocation;
         private float spawnchanse;
+        
+        public bool canSpawn = true;
         // Start is called before the first frame update
         void Start()
         {
@@ -22,7 +24,7 @@ namespace Test
             }
             spawnchanse = UnityEngine.Random.Range(1f, 100f);
             spawnchanse = Mathf.Clamp(spawnchanse, 1f, 100f);
-            if (spawnchanse >= 3 && spawnchanse <= 4)
+            if (spawnchanse >= 3 && spawnchanse <= 4 && canSpawn == true)
             {
                 GameObject SkeletonSpawner = Instantiate(skeletonPreFab, spawnLocation.position, spawnLocation.rotation);
             }

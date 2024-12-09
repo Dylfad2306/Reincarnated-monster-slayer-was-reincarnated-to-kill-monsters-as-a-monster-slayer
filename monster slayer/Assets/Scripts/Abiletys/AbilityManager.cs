@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 
@@ -33,7 +32,6 @@ public class AbilityManager : MonoBehaviour
         {
             if (ability.GetRequiredPlayerLevel() <= playerLevel)
             {
-                print("gello");
                 if (!_availableAbilities.Contains(ability))
                 {
                     SetAbilityToAvailable(ability);

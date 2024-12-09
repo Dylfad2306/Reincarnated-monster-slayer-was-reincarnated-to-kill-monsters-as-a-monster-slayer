@@ -4,11 +4,12 @@ using UnityEngine.UIElements;
 
 namespace Ui.Abilitys
 {
-    public class CreateActiveAbilitys : MonoBehaviour
+    public class CreateAbilitycards : MonoBehaviour
     {
         [SerializeField] private UIDocument document;
         [SerializeField] private StyleSheet styleSheet;
         [SerializeField] private AbilityManager abilityManager;
+        public List<string> selectedAbilities = new List<string>();
 
         private void OnValidate()
         {
@@ -21,7 +22,7 @@ namespace Ui.Abilitys
             print(availableAbilities.Count);
             foreach (AbilityBehaviour availableAbility in availableAbilities)
             {
-                CreateCards(availableAbility.AbilityName, availableAbility.Description, availableAbility._abilityLevel, availableAbility._abilityExperience, availableAbility._experienceNeededToLevelUp);
+                CreateCards(availableAbility.AbilityName, availableAbility.Description, availableAbility._abilityLevel, availableAbility._abilityExperience, availableAbility._experienceNeededToLevelUp, availableAbility.AbilityType);
             }
         }
 
@@ -30,17 +31,17 @@ namespace Ui.Abilitys
             List<AbilityBehaviour> availableAbilities = abilityManager.GetPassiveAbilities(); // Can also use GetActive or GetPassive
             foreach (AbilityBehaviour availableAbility in availableAbilities)
             {
-                CreateCards(availableAbility.AbilityName, availableAbility.Description, availableAbility._abilityLevel, availableAbility._abilityExperience, availableAbility._experienceNeededToLevelUp);
+                CreateCards(availableAbility.AbilityName, availableAbility.Description, availableAbility._abilityLevel, availableAbility._abilityExperience, availableAbility._experienceNeededToLevelUp, availableAbility.AbilityType);
             }
         }
         
-        public void CreateCards(string cardName, string cardDescription, int cardLevel, int cardXp, int cardReqXp)
+        public void CreateCards(string cardName, string cardDescription, int cardLevel, int cardXp, int cardReqXp, string abilityType)
         {
             var root = document.rootVisualElement;
             
             root.styleSheets.Add(styleSheet);
             var cardHolder = Create<VisualElement>("card-holder");
-            var card = Create<VisualElement>("card");
+            var card = Create<Button>("card");
 
             var cardtitel = Create<Label>("card-titel");
             var cardDec = Create<Label>("card-description");
@@ -51,6 +52,24 @@ namespace Ui.Abilitys
             cardDec.text = cardDescription;
             level.text = cardLevel.ToString();
             xp.text = cardXp.ToString() + "/" + cardReqXp.ToString();
+            
+            card.clicked += () =>
+            {
+                if (abilityType == "Active")
+                {
+                  if (!selectedAbilities.Contains(cardName))
+                    {
+                        selectedAbilities.Add(cardName);
+                        Debug.Log("Selected abilities: " + string.Join(", ", selectedAbilities));
+                    }
+                    else
+                    {
+                        selectedAbilities.Remove(cardName);
+                        Debug.Log("removed abilities: " + string.Join(", ", selectedAbilities));
+                    }  
+                }
+                
+            };
             
             cardHolder.Add(card);
             card.Add(cardtitel);

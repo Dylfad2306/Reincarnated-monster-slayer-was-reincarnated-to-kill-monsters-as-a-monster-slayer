@@ -32,6 +32,14 @@ public abstract class AbilityBehaviour : MonoBehaviour
         get { return _AbilityTier; }
         set { _AbilityTier = value; }
     }
+    
+    [SerializeField] private string _abilityType;
+    
+    public string AbilityType
+    {
+        get { return _abilityType; }
+        set { _abilityType = value; }
+    }
 
     void Start()
     {
@@ -43,13 +51,14 @@ public abstract class AbilityBehaviour : MonoBehaviour
     
     protected abstract void OnStartAbility();
 
-    protected void SetAbilityInformation(string abilityName, string description, int abilityTier, int requiredPlayerLevel, int abilityLevel)
+    protected void SetAbilityInformation(string abilityName, string description, int abilityTier, int requiredPlayerLevel, int abilityLevel, string abilityType)
     {
         _abilityName = abilityName;
         _description = description;
         _AbilityTier = abilityTier;
         _requiredPlayerLevel = requiredPlayerLevel;
         _abilityLevel = abilityLevel;
+        _abilityType = abilityType;
     }
 
     public int GetRequiredPlayerLevel()

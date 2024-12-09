@@ -1,5 +1,5 @@
 using System;
-using Abiletys;
+using Test;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
@@ -11,7 +11,8 @@ namespace Ui.Abilitys
         [SerializeField] private UIDocument document;
         [SerializeField] private StyleSheet styleSheet;
         
-        public CreateActiveAbilitys CreateActiveAbilitys;
+        public CreateAbilitycards CreateActiveAbilitys;
+        public SpawnSeketons SpawnSeketons;
         
         private bool _isUIVisible = false;
 
@@ -25,6 +26,8 @@ namespace Ui.Abilitys
                     RemoveGeneratedUI();
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
+                    Time.timeScale = 1f;
+                    SpawnSeketons.canSpawn = true;
                 }
                 else
                 {
@@ -32,6 +35,8 @@ namespace Ui.Abilitys
                     Generate();
                     Cursor.lockState = CursorLockMode.Confined;
                     Cursor.visible = true;
+                    Time.timeScale = 0f;
+                    SpawnSeketons.canSpawn = false;
                 }
             }
         }

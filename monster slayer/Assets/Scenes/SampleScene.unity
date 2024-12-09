@@ -1028,6 +1028,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 942136322}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1214714fe1a65049850348b08969afd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 942136323}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1214714fe1a65049850348b08969afd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 942136324}
   m_SourcePrefab: {fileID: 100100000, guid: d1214714fe1a65049850348b08969afd, type: 3}
 --- !u!4 &281699423 stripped
 Transform:
@@ -1725,6 +1733,7 @@ MonoBehaviour:
   skeletonPreFab: {fileID: 3136820629370392942, guid: 62dcba975a0bdfe47bef48ea43049412,
     type: 3}
   spawnLocation: {fileID: 484198457}
+  canSpawn: 1
 --- !u!114 &914991671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,8 +1758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1fcac3245b0b344bc2297190ca01c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityMenu: {fileID: 1265387197}
-  spawnSeketons: {fileID: 914991670}
 --- !u!4 &941949733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 108507113624698413, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
@@ -1962,6 +1969,47 @@ MonoBehaviour:
   _abilityName: 
   _description: 
   _AbilityTier: 0
+  _abilityType: 
+--- !u!114 &942136323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942136308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15d88842eee45c6bc2be9c04b2c7370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredPlayerLevel: 0
+  _abilityLevel: 0
+  _experienceNeededToLevelUp: 0
+  _abilityExperience: 0
+  _abilityName: 
+  _description: 
+  _AbilityTier: 0
+  _abilityType: 
+--- !u!114 &942136324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942136308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273101cd553d05145b2a71eb3c0d6757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredPlayerLevel: 0
+  _abilityLevel: 0
+  _experienceNeededToLevelUp: 0
+  _abilityExperience: 0
+  _abilityName: 
+  _description: 
+  _AbilityTier: 0
+  _abilityType: 
 --- !u!4 &957558156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
@@ -2043,6 +2091,7 @@ GameObject:
   - component: {fileID: 1265387199}
   - component: {fileID: 1265387202}
   - component: {fileID: 1265387203}
+  - component: {fileID: 1265387204}
   m_Layer: 5
   m_Name: CardUi
   m_TagString: Untagged
@@ -2097,6 +2146,7 @@ MonoBehaviour:
   styleSheet: {fileID: 7433441132597879392, guid: b2a075cc04170694787a1b13f081436b,
     type: 3}
   CreateActiveAbilitys: {fileID: 1265387203}
+  SpawnSeketons: {fileID: 914991670}
 --- !u!114 &1265387203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,6 +2163,23 @@ MonoBehaviour:
   styleSheet: {fileID: 7433441132597879392, guid: 3f5c4b5ca7ab69f45a49080e0f77b033,
     type: 3}
   abilityManager: {fileID: 942136321}
+  selectedAbilities: []
+--- !u!114 &1265387204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265387197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1666baf49dd154d9725009c5f8e2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  document: {fileID: 1265387199}
+  styleSheet: {fileID: 7433441132597879392, guid: f627170d22caf5541a596d72d418618c,
+    type: 3}
+  createAbilitycards: {fileID: 1265387203}
 --- !u!1 &1425004598
 GameObject:
   m_ObjectHideFlags: 0
