@@ -42,7 +42,7 @@ public class AbilityManager : MonoBehaviour
 
     void SetAbilityToAvailable(AbilityBehaviour ability)
     {
-        Debug.Log("Ability "+ ability.AbilityName +" available");
+       // Debug.Log("Ability "+ ability.AbilityName +" available");
         _availableAbilities.Add(ability);
     }
 

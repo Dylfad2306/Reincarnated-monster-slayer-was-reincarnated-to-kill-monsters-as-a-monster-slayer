@@ -1036,6 +1036,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 942136324}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1214714fe1a65049850348b08969afd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 942136327}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1214714fe1a65049850348b08969afd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 942136326}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d1214714fe1a65049850348b08969afd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 942136325}
   m_SourcePrefab: {fileID: 100100000, guid: d1214714fe1a65049850348b08969afd, type: 3}
 --- !u!4 &281699423 stripped
 Transform:
@@ -1695,7 +1707,6 @@ GameObject:
   - component: {fileID: 914991669}
   - component: {fileID: 914991670}
   - component: {fileID: 914991671}
-  - component: {fileID: 914991672}
   m_Layer: 0
   m_Name: GameManeger
   m_TagString: Untagged
@@ -1744,18 +1755,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73491c80a22311841a0dd2b977010160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &914991672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914991667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1fcac3245b0b344bc2297190ca01c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &941949733 stripped
@@ -2010,12 +2009,137 @@ MonoBehaviour:
   _description: 
   _AbilityTier: 0
   _abilityType: 
+--- !u!114 &942136325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942136308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6141d6baf3687ca48ac97bbd4638ee0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredPlayerLevel: 0
+  _abilityLevel: 0
+  _experienceNeededToLevelUp: 0
+  _abilityExperience: 0
+  _abilityName: 
+  _description: 
+  _AbilityTier: 0
+  _abilityType: 
+--- !u!114 &942136326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942136308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4892aad3eb1b9e54a8ec1fab5d2eb866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredPlayerLevel: 0
+  _abilityLevel: 0
+  _experienceNeededToLevelUp: 0
+  _abilityExperience: 0
+  _abilityName: 
+  _description: 
+  _AbilityTier: 0
+  _abilityType: 
+--- !u!114 &942136327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942136308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbb49ff4f6d5364f9d374d0811f2b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredPlayerLevel: 0
+  _abilityLevel: 0
+  _experienceNeededToLevelUp: 0
+  _abilityExperience: 0
+  _abilityName: 
+  _description: 
+  _AbilityTier: 0
+  _abilityType: 
 --- !u!4 &957558156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
     type: 3}
   m_PrefabInstance: {fileID: 230879201}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1023285211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1023285214}
+  - component: {fileID: 1023285213}
+  - component: {fileID: 1023285212}
+  m_Layer: 0
+  m_Name: HotbarUi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1023285212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023285211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1666baf49dd154d9725009c5f8e2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  document: {fileID: 1023285213}
+  styleSheet: {fileID: 7433441132597879392, guid: f627170d22caf5541a596d72d418618c,
+    type: 3}
+  createAbilitycards: {fileID: 1265387203}
+--- !u!114 &1023285213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023285211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 6404ee251b1b72c47b6c93cd067cbdeb, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 0}
+  m_SortingOrder: 0
+--- !u!4 &1023285214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023285211}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.259129, y: 0.11727661, z: -2.2833767}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179860373
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,7 +2215,6 @@ GameObject:
   - component: {fileID: 1265387199}
   - component: {fileID: 1265387202}
   - component: {fileID: 1265387203}
-  - component: {fileID: 1265387204}
   m_Layer: 5
   m_Name: CardUi
   m_TagString: Untagged
@@ -2164,22 +2287,6 @@ MonoBehaviour:
     type: 3}
   abilityManager: {fileID: 942136321}
   selectedAbilities: []
---- !u!114 &1265387204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265387197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1666baf49dd154d9725009c5f8e2a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  document: {fileID: 1265387199}
-  styleSheet: {fileID: 7433441132597879392, guid: f627170d22caf5541a596d72d418618c,
-    type: 3}
-  createAbilitycards: {fileID: 1265387203}
 --- !u!1 &1425004598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,3 +2864,4 @@ SceneRoots:
   - {fileID: 484198457}
   - {fileID: 1690654152}
   - {fileID: 1265387200}
+  - {fileID: 1023285214}

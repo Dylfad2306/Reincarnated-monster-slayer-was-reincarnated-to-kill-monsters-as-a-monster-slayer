@@ -19,7 +19,6 @@ namespace Ui.Abilitys
         public void createActiveAbilitysCard()
         {
             List<AbilityBehaviour> availableAbilities = abilityManager.GetActiveAbilities(); // Can also use GetActive or GetPassive
-            print(availableAbilities.Count);
             foreach (AbilityBehaviour availableAbility in availableAbilities)
             {
                 CreateCards(availableAbility.AbilityName, availableAbility.Description, availableAbility._abilityLevel, availableAbility._abilityExperience, availableAbility._experienceNeededToLevelUp, availableAbility.AbilityType);
@@ -60,12 +59,12 @@ namespace Ui.Abilitys
                   if (!selectedAbilities.Contains(cardName))
                     {
                         selectedAbilities.Add(cardName);
-                        Debug.Log("Selected abilities: " + string.Join(", ", selectedAbilities));
+                        //Debug.Log("Selected abilities: " + string.Join(", ", selectedAbilities));
                     }
                     else
                     {
                         selectedAbilities.Remove(cardName);
-                        Debug.Log("removed abilities: " + string.Join(", ", selectedAbilities));
+                        //Debug.Log("removed abilities: " + string.Join(", ", selectedAbilities));
                     }  
                 }
                 

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-   public class RockShot : ActiveAbility
+   public class RockShot : ActiveAbility, IAbility
    {
        protected override void OnStartAbility()
        {
-           SetAbilityInformation("rock shot", "shouts a rock bullet", 1, 2, 0, "Active");
+           SetAbilityInformation("RockShot", "shouts a rock bullet", 1, 2, 0, "Active");
+       }
+       public void ActivateAbility()
+       {
+           Debug.Log("rock shot activated!");
        }
    }
 

@@ -1,5 +1,23 @@
+Label {
+    color: white;
+    font-size: 15px;
+}
+
 .backgroundBox {
-    
-    background-color: crimson;
-    
+    flex-direction: row;
+    justify-content: center;
+    /*fix so it centers to the bottom*/
+}
+.hotbarbox {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: darkblue;
+}
+.hotbarbox-number {
+    font-size: 20px;
+    margin-top: 0px;
+}
+.hotbarbox-name {
+    align-self: center;
 }
