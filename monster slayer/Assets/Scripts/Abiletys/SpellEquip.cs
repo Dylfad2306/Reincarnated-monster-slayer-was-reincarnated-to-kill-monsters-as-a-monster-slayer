@@ -18,9 +18,9 @@ public class SpellEquip : MonoBehaviour
     void Start()
     {
         // Populate the dictionary with available abilities
-        abilityDictionary.Add("Fireball", new FireBall()); 
-        abilityDictionary.Add("rockshot", new RockShot());
-        abilityDictionary.Add("waterball", new waterball());
+        abilityDictionary.Add("Fireball", gameObject.AddComponent<FireBall>()); 
+        abilityDictionary.Add("rockshot", gameObject.AddComponent<RockShot>());
+        abilityDictionary.Add("waterball", gameObject.AddComponent<waterball>());
         //abilityDictionary.Add("IceBlast", new IceBlast());
     }
     void Update()
