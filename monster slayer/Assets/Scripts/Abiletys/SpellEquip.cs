@@ -19,12 +19,13 @@ public class SpellEquip : MonoBehaviour
     {
         // Populate the dictionary with available abilities
         abilityDictionary.Add("Fireball", gameObject.AddComponent<FireBall>()); 
-        abilityDictionary.Add("rockshot", gameObject.AddComponent<RockShot>());
+        abilityDictionary.Add("RockShot", gameObject.AddComponent<RockShot>());
         abilityDictionary.Add("waterball", gameObject.AddComponent<waterball>());
         //abilityDictionary.Add("IceBlast", new IceBlast());
     }
     void Update()
     {
+        CreateHotBar();
         // Ensure the selectedAbilities list is not null
         if (createAbilitycards == null || createAbilitycards.selectedAbilities == null) return;
 
@@ -42,7 +43,7 @@ public class SpellEquip : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        CreateHotBar();
+        //CreateHotBar();
     }
     
     private void ActivateAbility(string abilityName)

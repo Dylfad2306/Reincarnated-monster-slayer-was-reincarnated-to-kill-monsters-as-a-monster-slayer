@@ -1,0 +1,61 @@
+.background {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.background-box {
+    border-color: black;
+    border-width: 5px;
+    background-color: crimson;
+    width: 1200px;
+    height: 800px;
+}
+.inventory-title {
+    font-size: 35px;
+}
+.inventory-top-bar {
+    border-color: black;
+    border-bottom-width: 5px;
+    width: 100%;
+    flex-direction: row;
+}
+.menue-buttons {
+    font-size: 16px;
+    -unity-font-style: bold;
+    width: 100px;
+}
+.button-group {
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 100%;
+}
+.bottom-part {
+    flex-direction: row;
+}
+.caracter-icon {
+    background-color: white;
+    width: 500px;
+    height: 600px;
+}
+.caracter-stats {
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    font-size: 20px;
+    -unity-font-style: bold;
+}
+.stats {
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    border-width: 5px;
+    border-color: cyan;
+}
+.Stat-Text-And-Button {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    font-size: 20px;
+    -unity-font-style: bold;
+} 
