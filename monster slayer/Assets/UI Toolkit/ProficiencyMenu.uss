@@ -38,27 +38,10 @@
     flex-direction: row;
     height: 90%;
 }
-.caracter-icon {
-    background-color: white;
-    width: 500px;
-    height: 600px;
+.master-card {
+    border-width: 5px;
+    border-color: black;
+    height: 100px;
+    width: 300px;
+    margin: 10px;
 }
-.caracter-stats {
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    font-size: 20px;
-    -unity-font-style: bold;
-}
-.stats {
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-}
-.Stat-Text-And-Button {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50%;
-    font-size: 20px;
-    -unity-font-style: bold;
-} 

@@ -1,19 +1,40 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using player;
 using Test;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 
-public class CreateStatsInventory : MonoBehaviour
+public class CreateStatsinventory : MonoBehaviour
 {
     [SerializeField] private UIDocument document;
     [SerializeField] private StyleSheet styleSheet;
     public SpawnSeketons spawnSeketons;
+    public CreateProficiencyMenu proficiencyMenu;
+    
+    public LevelHandeler playerLevel;
         
     private bool _isUIVisible = false;
 
+    public int strengthInt = 1;
+    public int healthInt = 1;
+    public int defenseint = 1;
+    public int staminaInt = 1;
+    public int agilityInt = 1;
+    public float magicalPowerInt = 1;
+    public int manaInt = 1;
+    public int customPointsInt = 0;
+
+    private Button StrengthIncrease;
+    private Button HealthIncrease;
+    private Button DefenseIncrease;
+    private Button StaminaIncrease;
+    private Button AgilityIncrease;
+    private Button magicalPowerIncrease;
+    private Button ManaIncrease;
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.N))
@@ -39,7 +60,12 @@ public class CreateStatsInventory : MonoBehaviour
         }
     }
 
-    private void CreateInventoryUI()
+    private void OnValidate()
+    {
+        //CreateInventoryUI();
+    }
+
+    public void CreateInventoryUI()
     {
         var root = document.rootVisualElement;
             
@@ -48,9 +74,9 @@ public class CreateStatsInventory : MonoBehaviour
 
         var Backgroundvisual = Create<VisualElement>("background");
         var inventoryBox = Create<VisualElement>("background-box");
+        var inventoryTopBar = Create<VisualElement>("inventory-top-bar");
         var BottomPart = Create<VisualElement>("bottom-part");
         
-        var inventoryTopBar = Create<VisualElement>("inventory-top-bar");
         var inventoryTitel = Create<Label>("inventory-title");
         var buttonGroup = Create<VisualElement>("button-group");
         var itemsinventoryButton = Create<Button>("menue-buttons");
@@ -72,27 +98,28 @@ public class CreateStatsInventory : MonoBehaviour
         var test = Create<Label>();
         
         var stats = Create<VisualElement>("stats");
+        var cutomPointsText = Create<Label>("Stat-Text-And-Button");
         var Strength = Create<VisualElement>("Stat-Text-And-Button");
         var StrengthStatText = Create<Label>("strength-stat");
-        var StrengthIncrease = Create<Button>("strength-increase");
+        StrengthIncrease = Create<Button>("strength-increase");
         var Health = Create<VisualElement>("Stat-Text-And-Button");
         var HealthStatText = Create<Label>("health-stat");
-        var HealthIncrease = Create<Button>("health-increase");
+        HealthIncrease = Create<Button>("health-increase");
         var defense = Create<VisualElement>("Stat-Text-And-Button");
         var DefenseStatText = Create<Label>("defense-stat");
-        var DefenseIncrease = Create<Button>("defense-increase");
+        DefenseIncrease = Create<Button>("defense-increase");
         var Stamina = Create<VisualElement>("Stat-Text-And-Button");
         var StaminaStatText = Create<Label>("stamina-stat");
-        var StaminaIncrease = Create<Button>("stamina-increase");
+        StaminaIncrease = Create<Button>("stamina-increase");
         var Agility = Create<VisualElement>("Stat-Text-And-Button");
         var AgilityStatText = Create<Label>("agility-stat");
-        var AgilityIncrease = Create<Button>("agility-increase");
+        AgilityIncrease = Create<Button>("agility-increase");
         var MagicalPower = Create<VisualElement>("Stat-Text-And-Button");
         var magicalPowerStatText = Create<Label>("magical-power-stat");
-        var magicalPowerIncrease = Create<Button>("magical-power-increase");
+        magicalPowerIncrease = Create<Button>("magical-power-increase");
         var Mana = Create<VisualElement>("Stat-Text-And-Button");
         var ManaStatText = Create<Label>("mana-stat");
-        var ManaIncrease = Create<Button>("mana-increase");
+        ManaIncrease = Create<Button>("mana-increase");
         
         inventoryTitel.text = "Inventory";
         itemsinventoryButtonText.text = "Items";
@@ -101,24 +128,25 @@ public class CreateStatsInventory : MonoBehaviour
         statsButtonText.text = "Stats";
         //Bottom part
         caracterName.text = "Caracter Name: " + "hello";
-        caracterLevel.text = "Caracter Level: " + "53";
-        caracterLevelup.text = "Caracter Level up: " + "567 / 10495";
+        caracterLevel.text = "Caracter Level: " + playerLevel.playerLevel.ToString();
+        caracterLevelup.text = "Caracter Level up: " + playerLevel.currentXp.ToString() + "/" + playerLevel.requirerdXp.ToString(); ;
         test.text = "Test";
         
         //7 numbers is max
-        StrengthStatText.text = "Strength: " + "5";
+        cutomPointsText.text = "Custom Points: " + customPointsInt.ToString();
+        StrengthStatText.text = "Strength: " + strengthInt;
         StrengthIncrease.text = "+1";
-        HealthStatText.text = "Health: " + "5";
+        HealthStatText.text = "Health: " + healthInt;
         HealthIncrease.text = "+1";
-        DefenseStatText.text = "Defense: " + "5";
+        DefenseStatText.text = "Defense: " + defenseint;
         DefenseIncrease.text = "+1";
-        StaminaStatText.text = "Stamina: " + "5";
+        StaminaStatText.text = "Stamina: " + staminaInt;
         StaminaIncrease.text = "+1";
-        AgilityStatText.text = "Agility: " + "5";
+        AgilityStatText.text = "Agility: " + agilityInt;
         AgilityIncrease.text = "+1";
-        magicalPowerStatText.text = "Magic strength: " + "5";
+        magicalPowerStatText.text = "MagicalPower: " + magicalPowerInt;
         magicalPowerIncrease.text = "+1";
-        ManaStatText.text = "Mana: " + "5";
+        ManaStatText.text = "Mana: " + manaInt;
         ManaIncrease.text = "+1";
         
         Backgroundvisual.Add(inventoryBox);
@@ -147,6 +175,7 @@ public class CreateStatsInventory : MonoBehaviour
         
         BottomPart.Add(stats);
         
+        stats.Add(cutomPointsText);
         stats.Add(Strength);
         Strength.Add(StrengthStatText);
         Strength.Add(StrengthIncrease);
@@ -171,17 +200,43 @@ public class CreateStatsInventory : MonoBehaviour
 
         proficiencyButton.clicked += OpenProficiencyMenu;
         
+        if (customPointsInt >= 1)
+        {
+            StrengthIncrease.clicked += () => { if (customPointsInt > 0) { strengthInt += 1; UpdateStats(StrengthStatText, "Strength: " + strengthInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
+            HealthIncrease.clicked += () => { if (customPointsInt > 0) { healthInt += 1; UpdateStats(HealthStatText, "Health: " + healthInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
+            DefenseIncrease.clicked += () => { if (customPointsInt > 0) { defenseint += 1; UpdateStats(DefenseStatText, "Defense: " + defenseint.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
+            StaminaIncrease.clicked += () => { if (customPointsInt > 0) { staminaInt += 1; UpdateStats(StaminaStatText, "Stamina: " + staminaInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
+            AgilityIncrease.clicked += () => { if (customPointsInt > 0) { agilityInt += 1; UpdateStats(AgilityStatText, "Agility: " + agilityInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
+            magicalPowerIncrease.clicked += () => { if (customPointsInt > 0) { magicalPowerInt += 1; UpdateStats(magicalPowerStatText, "MagicalPower: " + magicalPowerInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
+            ManaIncrease.clicked += () => { if (customPointsInt > 0) { manaInt += 1; UpdateStats(ManaStatText, "Mana: " + manaInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
+        }
+
         root.Add(Backgroundvisual);
     }
 
-    public void OpenProficiencyMenu()
+    private void UpdateStats(Label statLabel, string statText, Label customPointsLabel, string customPointsText)
     {
-        
+        statLabel.text = statText;
+        customPointsLabel.text = customPointsText;
     }
     
-    
-    
-    
+    void OpenProficiencyMenu()
+    {
+        RemoveInventory();
+        proficiencyMenu.createProficiencyMenu();
+    }
+
+    public void statsLevelUp()
+    {
+        staminaInt += 1;
+        agilityInt += 1;
+        strengthInt += 1;
+        healthInt += 1;
+        defenseint += 1;
+        magicalPowerInt += 1;
+        manaInt += 1;
+        customPointsInt += 2;
+    }
     private void RemoveInventory()
     {
         var root = document.rootVisualElement;

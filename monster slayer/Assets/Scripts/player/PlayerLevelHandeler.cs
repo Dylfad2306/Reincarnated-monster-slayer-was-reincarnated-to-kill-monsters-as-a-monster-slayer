@@ -4,17 +4,13 @@ namespace player
 {
     public class LevelHandeler : MonoBehaviour
     {
-        //LevelAbilityCheck AbilityCheck;
+        public AbilityManager AbilityCheck;
+        public CreateStatsinventory Statsinventory;
 
         public float currentXp = 0;
         public float requirerdXp = 10;
         public int playerLevel = 1;
-
-        private void Start()
-        {
-            //AbilityCheck = GetComponent<LevelAbilityCheck>();
-        }
-
+        
         void Update()
         {
             if (currentXp >= requirerdXp)
@@ -28,6 +24,8 @@ namespace player
             playerLevel++;
             currentXp = 0;
             requirerdXp *= 1.15f;
+            AbilityCheck.OnPlayerLevelUp(playerLevel);
+            Statsinventory.statsLevelUp();
         }
     }
 }

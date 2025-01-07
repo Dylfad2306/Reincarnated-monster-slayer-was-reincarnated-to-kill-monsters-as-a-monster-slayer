@@ -13,7 +13,6 @@ public class AbilityManager : MonoBehaviour
         _abilityList = new List<AbilityBehaviour>();
         _availableAbilities = new List<AbilityBehaviour>();
         AddAbilities();
-        OnPlayerLevelUp(2);
     }
 
     // Find all ability behaviours and add them to the list
