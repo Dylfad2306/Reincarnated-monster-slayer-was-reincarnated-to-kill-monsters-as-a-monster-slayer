@@ -27,10 +27,9 @@ namespace Enemys
         bool alreadyAttacked;
 
         //State
-        public float sightRange, attackRange;
-        public bool playerInSightRange, playerInAttackRange;
-
-
+        public float sightRange, attackRange, spellRange;
+        public bool playerInSightRange, playerInAttackRange, playerInSpellRange;
+        
         private void Awake()
         {
             EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
@@ -38,6 +37,18 @@ namespace Enemys
             playerObj = GameObject.Find("playerObj");
             PlayerStats = playerObj.GetComponent<PlayerStats>();
             agent = GetComponent<NavMeshAgent>();
+
+            foreach (Component component in GetComponents<Component>())
+            {
+                if (component is ActiveAbility script)
+                {
+                    print("script found");
+                }
+                else
+                {
+                    print("not the right one");
+                }
+            }
         }
 
         private void Update()
@@ -46,10 +57,12 @@ namespace Enemys
 
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+            playerInSpellRange = Physics.CheckSphere(transform.position, spellRange, whatIsPlayer);
 
-            if (!playerInSightRange && !playerInAttackRange) Patroling();
-            if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-            if (playerInSightRange && playerInAttackRange) AttackPlayer();
+            if (!playerInSightRange && !playerInAttackRange && !playerInSpellRange) Patroling();
+            if (playerInSightRange && !playerInAttackRange && !playerInSpellRange) ChasePlayer();
+            if (playerInSightRange && !playerInAttackRange && playerInSpellRange) SpellChast();
+            if (playerInSightRange && playerInAttackRange && playerInSpellRange) AttackPlayer();
         }
 
         private void Patroling()
@@ -85,6 +98,11 @@ namespace Enemys
         private void ChasePlayer()
         {
             agent.SetDestination(player.position);
+        }
+
+        private void SpellChast()
+        {
+            
         }
 
         private void AttackPlayer()

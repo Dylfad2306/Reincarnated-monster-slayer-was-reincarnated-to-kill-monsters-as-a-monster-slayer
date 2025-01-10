@@ -11,7 +11,7 @@ public class FireBallDmg : MonoBehaviour
     private void Start()
     {
         //fix so that the statsinventory is not null
-        Statsinventory = GameObject.Find("Statsinventory").GetComponent<CreateStatsinventory>();
+        Statsinventory = GameObject.Find("Inventory").GetComponent<CreateStatsinventory>();
         print(Statsinventory.magicalPowerInt);
     }
 
@@ -20,7 +20,7 @@ public class FireBallDmg : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             print(Statsinventory.magicalPowerInt);
-            other.gameObject.GetComponent<EnemyStats>().enemyHealth -= 1;
+            other.gameObject.GetComponent<EnemyStats>().enemyHealth -= 1 + Statsinventory.magicalPowerInt;
             Destroy(gameObject);
         }
     }

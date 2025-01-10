@@ -82,11 +82,11 @@ public abstract class AbilityBehaviour : MonoBehaviour
     }
 
     // passive ability
-    public void ActivateAbility()
-    {
+    //public void ActivateAbility()
+    //{
         // Passive: Run code that adds effects
-        OnActivateAbility();
-    }
+      //  OnActivateAbility();
+    //}
 
 
     public void DeactivateAbility()

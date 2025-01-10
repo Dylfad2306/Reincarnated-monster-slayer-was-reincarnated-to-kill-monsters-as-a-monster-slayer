@@ -1,45 +1,58 @@
+using System;
 using player;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 
 namespace Ui
 {
     public class GameUIManager : MonoBehaviour
     {
-        UIDocument UIDocument;
-        VisualElement root;
+        [SerializeField] private UIDocument document;
+        [SerializeField] private StyleSheet styleSheet;
 
-        Label displayHealth;
-        Label displayLevel;
-        Label displayLevelXp;
-
-        PlayerStats playerStats;
-        LevelHandeler playerLevel;
-
-        GameObject playerobj;
-
-        private void Start()
-        {
-            playerobj = GameObject.Find("playerObj");
-            playerStats = playerobj.GetComponent<PlayerStats>();
-            playerLevel = playerobj.GetComponent<LevelHandeler>();
-
-            UIDocument = GetComponent<UIDocument>();
-            root = UIDocument.rootVisualElement;
-
-            displayHealth = root.Q("Health-number") as Label;
-            displayLevel = root.Q("Level-number") as Label;
-            displayLevelXp = root.Q("LevelXp-number") as Label;
-
-            //displayHealth = root.Q<Label>("display-health");
-        }
+        public PlayerStats playerstats;
+        public LevelHandeler levelHandeler;
 
         private void Update()
         {
-            displayHealth.text = playerStats.playerHealth.ToString();
-            displayLevel.text = playerLevel.playerLevel.ToString();
-            displayLevelXp.text = playerLevel.currentXp.ToString() + " / " + playerLevel.requirerdXp.ToString();
+            createHudStats();
+        }
+
+        private void createHudStats()
+        {
+            var root = document.rootVisualElement;
+            
+            root.styleSheets.Add(styleSheet);
+            root.Clear();
+
+            var playerStatsBox = Create<VisualElement>();
+            var playerhealth = Create<Label>();
+            var playerLevel = Create<Label>();
+            var playerLevelXp = Create<Label>();
+            var playerMana = Create<Label>();
+            
+            playerhealth.text = "Health: " + playerstats.playerHealth + "/" + playerstats.playerMaxHealth;
+            playerLevel.text = "Level: " + levelHandeler.playerLevel;
+            playerLevelXp.text = "xp: " + levelHandeler.currentXp + "/" + levelHandeler.requirerdXp;
+            playerMana.text = "Mana: " + playerstats.playermana + "/" + playerstats.playermaxmana;
+            
+            playerStatsBox.Add(playerhealth);
+            playerStatsBox.Add(playerMana);
+            playerStatsBox.Add(playerLevel);
+            playerStatsBox.Add(playerLevelXp);
+            
+            root.Add(playerStatsBox);
+        }
         
+        private T Create<T>(params string[] classNames) where T : VisualElement, new()
+        {
+            var ele = new T();
+            foreach (var className in classNames)
+            {
+                ele.AddToClassList(className);
+            }
+            return ele;
         }
     }
 }

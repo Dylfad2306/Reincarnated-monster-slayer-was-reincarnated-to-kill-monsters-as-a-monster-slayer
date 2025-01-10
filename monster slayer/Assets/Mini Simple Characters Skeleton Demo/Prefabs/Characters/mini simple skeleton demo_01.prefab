@@ -685,6 +685,7 @@ GameObject:
   - component: {fileID: 8721928780215479434}
   - component: {fileID: 8380844170633094570}
   - component: {fileID: 3565303593564287395}
+  - component: {fileID: 3521670097481863462}
   m_Layer: 0
   m_Name: mini simple skeleton demo_01
   m_TagString: Enemy
@@ -846,10 +847,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1621f58aad1e22c43a77ccb0c054a4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelHandeler: {fileID: 0}
   enemyHealth: 5
   maxEnemyHealth: 5
   enemyDamage: 1
+--- !u!114 &3521670097481863462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136820629370392942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2ce5a83e72aa4eb87a7f5b5c11b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredPlayerLevel: 0
+  _abilityLevel: 0
+  _experienceNeededToLevelUp: 0
+  _abilityExperience: 0
+  _abilityName: 
+  _description: 
+  _AbilityTier: 0
+  _abilityType: 
+  abilityPrefab: {fileID: 0}
+  Spawnpoint: {fileID: 0}
+  playerView: {fileID: 0}
+  BallDrop: 0.1
+  BallSpeed: 50
+  playerStats: {fileID: 0}
 --- !u!1 &3190320679450232660
 GameObject:
   m_ObjectHideFlags: 0
