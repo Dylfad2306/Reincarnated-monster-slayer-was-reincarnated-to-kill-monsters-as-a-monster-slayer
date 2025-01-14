@@ -12,7 +12,6 @@ public class FireBallDmg : MonoBehaviour
     {
         //fix so that the statsinventory is not null
         Statsinventory = GameObject.Find("Inventory").GetComponent<CreateStatsinventory>();
-        print(Statsinventory.magicalPowerInt);
     }
 
     private void OnTriggerEnter(Collider other)

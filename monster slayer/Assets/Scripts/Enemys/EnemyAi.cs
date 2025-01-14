@@ -1,6 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Reflection;
 using player;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Enemys
 {
@@ -29,6 +34,8 @@ namespace Enemys
         //State
         public float sightRange, attackRange, spellRange;
         public bool playerInSightRange, playerInAttackRange, playerInSpellRange;
+
+        private List<MonoBehaviour> activateAbilities = new List<MonoBehaviour>();
         
         private void Awake()
         {
@@ -38,15 +45,12 @@ namespace Enemys
             PlayerStats = playerObj.GetComponent<PlayerStats>();
             agent = GetComponent<NavMeshAgent>();
 
-            foreach (Component component in GetComponents<Component>())
+            foreach (MonoBehaviour script in GetComponents<MonoBehaviour>())
             {
-                if (component is ActiveAbility script)
+                MethodInfo method = script.GetType().GetMethod("ActivateAbility");
+                if (method != null)
                 {
-                    print("script found");
-                }
-                else
-                {
-                    print("not the right one");
+                    activateAbilities.Add(script);
                 }
             }
         }
@@ -102,7 +106,21 @@ namespace Enemys
 
         private void SpellChast()
         {
-            
+            int SpellOrNot = Random.Range(0, 1);
+            print("hello");
+
+            if (SpellOrNot == 0)
+            {
+                if (activateAbilities.Count > 0)
+                {
+                    print("i sed fire ball");
+                    int randomIndex = Random.Range(0, activateAbilities.Count);
+                    MonoBehaviour randomScript = activateAbilities[randomIndex];
+                    randomScript.GetType().GetMethod("ActivateAbility").Invoke(randomScript, null);
+                }
+
+            }
+            // activateAbilities
         }
 
         private void AttackPlayer()
