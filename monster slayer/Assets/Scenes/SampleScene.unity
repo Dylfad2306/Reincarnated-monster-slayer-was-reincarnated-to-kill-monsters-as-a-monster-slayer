@@ -834,6 +834,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d1214714fe1a65049850348b08969afd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1082271958561512970, guid: d1214714fe1a65049850348b08969afd,
         type: 3}
       propertyPath: m_Layer
@@ -2192,6 +2197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659aff423ace403aaaac5dbe5ae40625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _abilityList: []
 --- !u!114 &942136322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2239,6 +2245,13 @@ MonoBehaviour:
   _description: 
   _AbilityTier: 0
   _abilityType: 
+  abilityPrefab: {fileID: 7788114468562750141, guid: b2a685c6929806b4a8b0d6bef8c853be,
+    type: 3}
+  Spawnpoint: {fileID: 1336648383}
+  playerView: {fileID: 330585546}
+  BallDrop: 0.1
+  BallSpeed: 50
+  playerStats: {fileID: 942136319}
 --- !u!114 &942136324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2359,6 +2372,7 @@ MonoBehaviour:
   styleSheet: {fileID: 7433441132597879392, guid: f627170d22caf5541a596d72d418618c,
     type: 3}
   createAbilitycards: {fileID: 1265387203}
+  player: {fileID: 942136308}
 --- !u!114 &1023285213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3019,6 +3033,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1354038105549984717, guid: 62dcba975a0bdfe47bef48ea43049412,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 942136308}
+    - target: {fileID: 1354038105549984717, guid: 62dcba975a0bdfe47bef48ea43049412,
+        type: 3}
+      propertyPath: abilityManager
+      value: 
+      objectReference: {fileID: 942136321}
     - target: {fileID: 3136820629370392942, guid: 62dcba975a0bdfe47bef48ea43049412,
         type: 3}
       propertyPath: m_Name

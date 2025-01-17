@@ -12,17 +12,9 @@ public class SpellEquip : MonoBehaviour
     [SerializeField] private UIDocument document;
     [SerializeField] private StyleSheet styleSheet;
     public CreateAbilitycards createAbilitycards;
+    public GameObject player;
     
-    private Dictionary<string, IAbility> abilityDictionary = new Dictionary<string, IAbility>();
     
-    void Start()
-    {
-        // Populate the dictionary with available abilities
-        abilityDictionary.Add("Fireball", gameObject.AddComponent<FireBall>()); 
-        abilityDictionary.Add("RockShot", gameObject.AddComponent<RockShot>());
-        abilityDictionary.Add("waterball", gameObject.AddComponent<waterball>());
-        //abilityDictionary.Add("IceBlast", new IceBlast());
-    }
     void Update()
     {
         CreateHotBar();
@@ -64,14 +56,12 @@ public class SpellEquip : MonoBehaviour
     private MonoBehaviour FindAbilityByName(string abilityName)
     {
         // Search all active GameObjects for a component matching the ability name
-        foreach (GameObject obj in GameObject.FindObjectsOfType<GameObject>())
-        {
-            MonoBehaviour ability = obj.GetComponent(abilityName) as MonoBehaviour;
+        
+            MonoBehaviour ability = player.GetComponent(abilityName) as MonoBehaviour;
             if (ability != null)
             {
                 return ability;
             }
-        }
 
         // If not found, log a warning
         Debug.LogWarning($"Ability script '{abilityName}' not found in the scene.");

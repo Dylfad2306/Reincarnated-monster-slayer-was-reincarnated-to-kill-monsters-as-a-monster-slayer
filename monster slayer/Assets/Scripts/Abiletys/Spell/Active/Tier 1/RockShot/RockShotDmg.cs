@@ -1,10 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enemys;
 
-public class FireBallDmg : MonoBehaviour
+public class RockShotDmg : MonoBehaviour
 {
     public CreateStatsinventory Statsinventory;
 
@@ -18,8 +17,7 @@ public class FireBallDmg : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            print(Statsinventory.magicalPowerInt);
-            other.gameObject.GetComponent<EnemyStats>().enemyHealth -= 1 + Statsinventory.magicalPowerInt;
+            other.gameObject.GetComponent<EnemyStats>().enemyHealth -= 2 + Statsinventory.magicalPowerInt;
             Destroy(gameObject);
         }
     }

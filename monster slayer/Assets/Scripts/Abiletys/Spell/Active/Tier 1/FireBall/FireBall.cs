@@ -1,4 +1,3 @@
-using System;
 using player;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,16 +13,18 @@ public class FireBall : ActiveAbility, IAbility
         public float BallSpeed = 50f;
         private float ablilityCooldown = 1;
         
+        
         public PlayerStats playerStats;
         protected override void OnStartAbility()
         {
-            SetAbilityInformation("FireBall", "ball of fire", 1, 2, 0, "Active");
+            SetAbilityInformation("FireBall", "ball of fire", 1, 2, 0, "Active", 3);
         }
         public void ActivateAbility()
         {
             if (ablilityCooldown <= Time.time)
             {
               GameObject fireball = Instantiate(abilityPrefab, Spawnpoint.position, transform.rotation);
+              fireball.GetComponent <FireBallDmg>().Init(_tagToDamage);
                          
                          playerStats.playermana -= 10; 
                          
@@ -32,10 +33,5 @@ public class FireBall : ActiveAbility, IAbility
                          Destroy(fireball, 5f);  
                          ablilityCooldown = Time.time + 1;
             }
-            else
-            {
-                print("FireBall on cooldown");
-            }
-           
         }
     }

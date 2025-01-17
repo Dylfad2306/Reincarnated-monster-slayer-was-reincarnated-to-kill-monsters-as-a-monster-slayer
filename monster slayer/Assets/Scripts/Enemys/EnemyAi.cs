@@ -65,7 +65,11 @@ namespace Enemys
 
             if (!playerInSightRange && !playerInAttackRange && !playerInSpellRange) Patroling();
             if (playerInSightRange && !playerInAttackRange && !playerInSpellRange) ChasePlayer();
-            if (playerInSightRange && !playerInAttackRange && playerInSpellRange) SpellChast();
+            if (playerInSightRange && !playerInAttackRange && playerInSpellRange)
+            {
+                SpellChast(); 
+                ChasePlayer();
+            }
             if (playerInSightRange && playerInAttackRange && playerInSpellRange) AttackPlayer();
         }
 
@@ -107,13 +111,12 @@ namespace Enemys
         private void SpellChast()
         {
             int SpellOrNot = Random.Range(0, 1);
-            print("hello");
 
             if (SpellOrNot == 0)
             {
                 if (activateAbilities.Count > 0)
                 {
-                    print("i sed fire ball");
+                    
                     int randomIndex = Random.Range(0, activateAbilities.Count);
                     MonoBehaviour randomScript = activateAbilities[randomIndex];
                     randomScript.GetType().GetMethod("ActivateAbility").Invoke(randomScript, null);

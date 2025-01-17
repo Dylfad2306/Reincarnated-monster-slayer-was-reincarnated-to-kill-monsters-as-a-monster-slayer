@@ -6,7 +6,7 @@ public class waterball : ActiveAbility, IAbility
 {
     protected override void OnStartAbility()
     {
-        SetAbilityInformation("waterball", "shouts a rock bullet", 1, 2, 0, "Active");
+        SetAbilityInformation("waterball", "shouts a rock bullet", 1, 2, 0, "Active", 3);
     }
     public void ActivateAbility()
     {

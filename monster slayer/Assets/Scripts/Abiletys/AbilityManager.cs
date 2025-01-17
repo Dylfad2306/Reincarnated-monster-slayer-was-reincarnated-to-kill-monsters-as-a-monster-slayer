@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 public class AbilityManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private List<AbilityBehaviour> _abilityList;
+    public List<AbilityBehaviour> _abilityList;
     private List<AbilityBehaviour> _availableAbilities;
     void Start()
     {

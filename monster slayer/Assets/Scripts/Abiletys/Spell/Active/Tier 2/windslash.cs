@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HolyShot : ActiveAbility
+public class windslash : ActiveAbility
 {
     protected override void OnStartAbility()
     {
-        SetAbilityInformation("rock shot", "shouts a rock bullet", 1, 2, 0, "Active");
+        SetAbilityInformation("windslash", "shouts a blade of wind", 2, 5, 0, "Active", 6);
     }
 }

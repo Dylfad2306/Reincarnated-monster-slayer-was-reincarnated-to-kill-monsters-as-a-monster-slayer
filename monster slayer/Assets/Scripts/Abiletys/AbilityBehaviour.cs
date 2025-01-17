@@ -9,6 +9,11 @@ public abstract class AbilityBehaviour : MonoBehaviour
     public int _abilityLevel;
     public int _experienceNeededToLevelUp;
     public int _abilityExperience;
+    protected int reqpoints = 0;
+    protected string _tagToDamage;
+    protected GameObject _spellprojectile;
+    protected Transform _Spawnpoint;
+    protected Vector3 _SpellSpawnDirection;
 
     [SerializeField] private string _abilityName;
 
@@ -16,6 +21,19 @@ public abstract class AbilityBehaviour : MonoBehaviour
     {
         get { return _abilityName; }
         set { _abilityName = value; }
+    }
+
+    public int GetReqPoints()
+    {
+        return reqpoints;
+    }
+
+    public void Init(string tagToDamage, GameObject spellprojectile, Transform Spawnpoint, Vector3 SpellSpawnDirection)
+    {
+        _tagToDamage = tagToDamage;
+        _spellprojectile = spellprojectile;
+        _Spawnpoint = Spawnpoint;
+        _SpellSpawnDirection = SpellSpawnDirection;
     }
 
     [SerializeField] private string _description;
@@ -51,7 +69,7 @@ public abstract class AbilityBehaviour : MonoBehaviour
     
     protected abstract void OnStartAbility();
 
-    protected void SetAbilityInformation(string abilityName, string description, int abilityTier, int requiredPlayerLevel, int abilityLevel, string abilityType)
+    protected void SetAbilityInformation(string abilityName, string description, int abilityTier, int requiredPlayerLevel, int abilityLevel, string abilityType, int requiredPoint)
     {
         _abilityName = abilityName;
         _description = description;
@@ -59,6 +77,7 @@ public abstract class AbilityBehaviour : MonoBehaviour
         _requiredPlayerLevel = requiredPlayerLevel;
         _abilityLevel = abilityLevel;
         _abilityType = abilityType;
+        reqpoints = requiredPoint;
     }
 
     public int GetRequiredPlayerLevel()

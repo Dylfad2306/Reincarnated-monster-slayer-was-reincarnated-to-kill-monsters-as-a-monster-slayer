@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthRegen : PassiveAbility
+public class darknessOrb : ActiveAbility
 {
     protected override void OnStartAbility()
     {
-        SetAbilityInformation("HealthRegen", "regenerates health", 1, 2, 0, "passive", 3);
+        SetAbilityInformation("rock shot", "shouts a rock bullet", 1, 2, 0, "Active", 3);
     }
 }
