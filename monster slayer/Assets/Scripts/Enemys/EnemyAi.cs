@@ -14,6 +14,7 @@ namespace Enemys
         private PlayerStats PlayerStats;
         public EnemyStats EnemyStats;
         public EnemyHealthBar EnemyHealthBar;
+        public enemyspellselect enemyspells;
 
         public NavMeshAgent agent;
 
@@ -34,8 +35,7 @@ namespace Enemys
         //State
         public float sightRange, attackRange, spellRange;
         public bool playerInSightRange, playerInAttackRange, playerInSpellRange;
-
-        private List<MonoBehaviour> activateAbilities = new List<MonoBehaviour>();
+        
         
         private void Awake()
         {
@@ -44,15 +44,6 @@ namespace Enemys
             playerObj = GameObject.Find("playerObj");
             PlayerStats = playerObj.GetComponent<PlayerStats>();
             agent = GetComponent<NavMeshAgent>();
-
-            foreach (MonoBehaviour script in GetComponents<MonoBehaviour>())
-            {
-                MethodInfo method = script.GetType().GetMethod("ActivateAbility");
-                if (method != null)
-                {
-                    activateAbilities.Add(script);
-                }
-            }
         }
 
         private void Update()
@@ -114,11 +105,11 @@ namespace Enemys
 
             if (SpellOrNot == 0)
             {
-                if (activateAbilities.Count > 0)
+                if (enemyspells.addedAbilities.Count != 0)
                 {
-                    
-                    int randomIndex = Random.Range(0, activateAbilities.Count);
-                    MonoBehaviour randomScript = activateAbilities[randomIndex];
+                    // set a cooldown
+                    int randomIndex = Random.Range(0, enemyspells.addedAbilities.Count);
+                    MonoBehaviour randomScript = enemyspells.addedAbilities[randomIndex];
                     randomScript.GetType().GetMethod("ActivateAbility").Invoke(randomScript, null);
                 }
 

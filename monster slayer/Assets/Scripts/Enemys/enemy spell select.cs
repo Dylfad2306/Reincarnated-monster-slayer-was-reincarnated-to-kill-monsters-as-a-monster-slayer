@@ -11,8 +11,8 @@ public class enemyspellselect : MonoBehaviour
     public AbilityManager abilityManager;
     public int abilityPoints = 0; //11
 
-    
-
+    public Transform EnemySpellSpawnPoint;
+    public List<AbilityBehaviour> addedAbilities;
 
     private void Start()
     {
@@ -55,20 +55,22 @@ public class enemyspellselect : MonoBehaviour
         Random random = new Random();
         int randomNumber = random.Next(0, availableAbilities.Count); // upper bound is exclusive
         string selectedAbility = availableAbilities[randomNumber].AbilityName;
-        AbilityAdderFactory.AddAbility(gameObject, selectedAbility);
+        AbilityBehaviour abilityToAdd = AbilityAdderFactory.AddAbility(gameObject, selectedAbility);
+        print(abilityToAdd);
+        abilityToAdd.Init("Player", EnemySpellSpawnPoint);
         abilityPoints -= availableAbilities[randomNumber].GetReqPoints();
         availableAbilities.Remove(availableAbilities[randomNumber]);
-
+        
+        addedAbilities.Add(abilityToAdd);
+        
+        
         return availableAbilities;
     }
 }
 static class AbilityAdderFactory {
     
-    static public bool AddAbility(GameObject gameObjectToAdd, string abilityToAdd)
+    static public AbilityBehaviour AddAbility(GameObject gameObjectToAdd, string abilityToAdd)
     {
-        GameObject spellprojectile = null;
-        Transform EnemySpellSpawnPoint;
-        Vector3 spellDirection;
         AbilityBehaviour ability = null;
         
         switch(abilityToAdd) {
@@ -76,9 +78,6 @@ static class AbilityAdderFactory {
             //fire
                 case "FireBall":
                 ability = gameObjectToAdd.AddComponent<FireBall>();
-                //fix so that the spellprojectile is not null
-                spellprojectile = Resources.Load("Assets/Resources/fireballprefab") as GameObject;
-                Debug.Log(spellprojectile);
                     break;
             //water
                 case "waterball":
@@ -119,11 +118,9 @@ static class AbilityAdderFactory {
             
             //passive
             default:
-                return false;
+                return null;
         }
-        EnemySpellSpawnPoint = gameObjectToAdd.transform.Find("enemySpellSpawn");
-        spellDirection = EnemySpellSpawnPoint.transform.rotation.eulerAngles;
-        ability.Init("Player", spellprojectile, EnemySpellSpawnPoint, spellDirection);
-        return true;
+        
+        return ability;
     }
 }

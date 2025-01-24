@@ -1980,7 +1980,7 @@ MonoBehaviour:
   skeletonPreFab: {fileID: 3136820629370392942, guid: 62dcba975a0bdfe47bef48ea43049412,
     type: 3}
   spawnLocation: {fileID: 484198457}
-  canSpawn: 1
+  canSpawn: 0
 --- !u!114 &914991671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2220,11 +2220,9 @@ MonoBehaviour:
   _abilityType: 
   abilityPrefab: {fileID: 378469074248465853, guid: cf40b939f4b10c24daa19a5ac41a804f,
     type: 3}
-  Spawnpoint: {fileID: 1336648383}
   playerView: {fileID: 330585546}
   BallDrop: 0.5
   BallSpeed: 20
-  playerStats: {fileID: 942136319}
 --- !u!114 &942136323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3025,120 +3023,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1984824697
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1354038105549984717, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 942136308}
-    - target: {fileID: 1354038105549984717, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: abilityManager
-      value: 
-      objectReference: {fileID: 942136321}
-    - target: {fileID: 3136820629370392942, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_Name
-      value: mini simple skeleton demo_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3521670097481863462, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: Spawnpoint
-      value: 
-      objectReference: {fileID: 1336648383}
-    - target: {fileID: 3521670097481863462, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: playerView
-      value: 
-      objectReference: {fileID: 330585546}
-    - target: {fileID: 3521670097481863462, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: playerStats
-      value: 
-      objectReference: {fileID: 942136319}
-    - target: {fileID: 3521670097481863462, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: abilityPrefab
-      value: 
-      objectReference: {fileID: 378469074248465853, guid: cf40b939f4b10c24daa19a5ac41a804f,
-        type: 3}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.41420278
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9101847
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -131.062
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854269363171675655, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7943437031146323404, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7943437031146323404, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8380844170633094570, guid: 62dcba975a0bdfe47bef48ea43049412,
-        type: 3}
-      propertyPath: spellRange
-      value: 15
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 62dcba975a0bdfe47bef48ea43049412, type: 3}
 --- !u!1001 &1987982269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3221,7 +3105,7 @@ GameObject:
   - component: {fileID: 1991407448}
   - component: {fileID: 1991407447}
   m_Layer: 10
-  m_Name: Cube
+  m_Name: ramp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3324,7 +3208,6 @@ SceneRoots:
   - {fileID: 1785098506}
   - {fileID: 1425004599}
   - {fileID: 239748823}
-  - {fileID: 1984824697}
   - {fileID: 1179860374}
   - {fileID: 623387200}
   - {fileID: 914991669}

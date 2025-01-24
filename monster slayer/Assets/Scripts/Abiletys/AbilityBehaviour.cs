@@ -11,9 +11,7 @@ public abstract class AbilityBehaviour : MonoBehaviour
     public int _abilityExperience;
     protected int reqpoints = 0;
     protected string _tagToDamage;
-    protected GameObject _spellprojectile;
     protected Transform _Spawnpoint;
-    protected Vector3 _SpellSpawnDirection;
 
     [SerializeField] private string _abilityName;
 
@@ -28,12 +26,10 @@ public abstract class AbilityBehaviour : MonoBehaviour
         return reqpoints;
     }
 
-    public void Init(string tagToDamage, GameObject spellprojectile, Transform Spawnpoint, Vector3 SpellSpawnDirection)
+    public virtual void Init(string tagToDamage, Transform Spawnpoint)
     {
         _tagToDamage = tagToDamage;
-        _spellprojectile = spellprojectile;
         _Spawnpoint = Spawnpoint;
-        _SpellSpawnDirection = SpellSpawnDirection;
     }
 
     [SerializeField] private string _description;

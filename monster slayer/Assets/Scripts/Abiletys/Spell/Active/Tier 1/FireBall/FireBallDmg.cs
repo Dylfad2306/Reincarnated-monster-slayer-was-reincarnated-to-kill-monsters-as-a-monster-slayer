@@ -7,13 +7,13 @@ using Enemys;
 public class FireBallDmg : MonoBehaviour
 {
     public CreateStatsinventory Statsinventory;
-    private string _tagToDamage;
+    private string _tagToDamage = "Enemy";
 
     private void Start()
     {
         //fix so that the statsinventory is not null
         Statsinventory = GameObject.Find("Inventory").GetComponent<CreateStatsinventory>();
-        _tagToDamage = "Enemy";
+        print(_tagToDamage);
     }
 
     public void Init(string tagToDamage)

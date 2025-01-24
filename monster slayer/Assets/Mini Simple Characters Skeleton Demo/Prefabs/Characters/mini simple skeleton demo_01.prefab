@@ -710,6 +710,7 @@ Transform:
   - {fileID: 5484380442467416487}
   - {fileID: 7876398763569206604}
   - {fileID: 4520212876220007657}
+  - {fileID: 5021509594570209685}
   - {fileID: 8409890627790545283}
   - {fileID: 5927651596180098688}
   - {fileID: 1958833677951394249}
@@ -821,6 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyStats: {fileID: 3565303593564287395}
   EnemyHealthBar: {fileID: 7296259383026966398}
+  enemyspells: {fileID: 1354038105549984717}
   agent: {fileID: 4573151556139769743}
   whatIsGround:
     serializedVersion: 2
@@ -867,6 +869,8 @@ MonoBehaviour:
   player: {fileID: 0}
   abilityManager: {fileID: 0}
   abilityPoints: 11
+  EnemySpellSpawnPoint: {fileID: 5021509594570209685}
+  addedAbilities: []
 --- !u!1 &3190320679450232660
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +965,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3955379706298682279}
-  - {fileID: 5021509594570209685}
   m_Father: {fileID: 9061849834687320215}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3895099269742940099
@@ -1814,12 +1817,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8748598748653508974}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.356, z: 0.378}
+  m_LocalRotation: {x: -0.00023246581, y: 4.0417434e-16, z: 2.054667e-15, w: 1}
+  m_LocalPosition: {x: 0, y: 1.1876835, z: 0.37757203}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 223156922651891159}
+  m_Father: {fileID: 3854269363171675655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8969992985315841218
 GameObject:
