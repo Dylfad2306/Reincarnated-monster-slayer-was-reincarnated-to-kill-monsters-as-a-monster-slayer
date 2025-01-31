@@ -107,10 +107,14 @@ namespace Enemys
             {
                 if (enemyspells.addedAbilities.Count != 0)
                 {
-                    // set a cooldown
-                    int randomIndex = Random.Range(0, enemyspells.addedAbilities.Count);
-                    MonoBehaviour randomScript = enemyspells.addedAbilities[randomIndex];
-                    randomScript.GetType().GetMethod("ActivateAbility").Invoke(randomScript, null);
+                    if (Input.GetKey(KeyCode.V))
+                    {
+                       // set a cooldown
+                        int randomIndex = Random.Range(0, enemyspells.addedAbilities.Count);
+                        MonoBehaviour randomScript = enemyspells.addedAbilities[randomIndex];
+                        randomScript.GetType().GetMethod("ActivateAbility").Invoke(randomScript, null); 
+                    }
+                    
                 }
 
             }

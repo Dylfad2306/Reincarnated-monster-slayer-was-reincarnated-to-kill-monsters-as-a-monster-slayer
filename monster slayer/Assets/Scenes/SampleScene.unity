@@ -2290,6 +2290,10 @@ MonoBehaviour:
   _description: 
   _AbilityTier: 0
   _abilityType: 
+  abilityPrefab: {fileID: 0}
+  playerView: {fileID: 0}
+  BallDrop: 0.1
+  BallSpeed: 50
 --- !u!114 &942136326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2310,6 +2314,10 @@ MonoBehaviour:
   _description: 
   _AbilityTier: 0
   _abilityType: 
+  abilityPrefab: {fileID: 0}
+  playerView: {fileID: 0}
+  BallDrop: 0.1
+  BallSpeed: 50
 --- !u!114 &942136327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2330,6 +2338,10 @@ MonoBehaviour:
   _description: 
   _AbilityTier: 0
   _abilityType: 
+  abilityPrefab: {fileID: 0}
+  playerView: {fileID: 0}
+  BallDrop: 0.1
+  BallSpeed: 50
 --- !u!4 &957558156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
@@ -3038,6 +3050,10 @@ PrefabInstance:
     - target: {fileID: 1037715513984232, guid: 259746fbc59909b4eb14377c46a80363, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037715513984232, guid: 259746fbc59909b4eb14377c46a80363, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4145553361310044, guid: 259746fbc59909b4eb14377c46a80363, type: 3}
       propertyPath: m_LocalPosition.x

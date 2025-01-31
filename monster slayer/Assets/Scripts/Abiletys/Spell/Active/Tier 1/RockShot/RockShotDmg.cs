@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enemys;
+using player;
 
 public class RockShotDmg : MonoBehaviour
 {
@@ -23,10 +24,15 @@ public class RockShotDmg : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         print(_tagToDamage);
-        print(other.gameObject.tag);
-        if (other.gameObject.tag == _tagToDamage)
+        if ("Enemy" == _tagToDamage && other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<EnemyStats>().enemyHealth -= 1 + Statsinventory.magicalPowerInt;
+            Destroy(gameObject);
+        }
+
+        if ("Player" == _tagToDamage && other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerStats>().playerHealth -= 1;
             Destroy(gameObject);
         }
     }

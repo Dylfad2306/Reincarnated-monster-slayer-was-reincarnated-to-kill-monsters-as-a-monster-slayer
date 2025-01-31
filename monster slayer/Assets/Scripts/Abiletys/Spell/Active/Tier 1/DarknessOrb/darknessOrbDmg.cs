@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enemys;
 using player;
 
-public class FireBallDmg : MonoBehaviour
+public class darknessOrbDmg : MonoBehaviour
 {
     public CreateStatsinventory Statsinventory;
     private string _tagToDamage = "Enemy";
@@ -23,6 +22,8 @@ public class FireBallDmg : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print(_tagToDamage);
+        print(other.gameObject.tag);
         if ("Enemy" == _tagToDamage && other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<EnemyStats>().enemyHealth -= 1 + Statsinventory.magicalPowerInt;
@@ -31,8 +32,8 @@ public class FireBallDmg : MonoBehaviour
 
         if ("Player" == _tagToDamage && other.gameObject.tag == "Player")
         {
+            print("hello");
             other.gameObject.GetComponent<PlayerStats>().playerHealth -= 1;
-            print(other.gameObject.GetComponent<PlayerStats>().playerHealth);
             Destroy(gameObject);
         }
     }

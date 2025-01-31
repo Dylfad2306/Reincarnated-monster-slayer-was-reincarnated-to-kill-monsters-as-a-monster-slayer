@@ -1,11 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Enemys;
 using player;
+using UnityEngine;
 
-public class FireBallDmg : MonoBehaviour
+public class HolyShot1 : MonoBehaviour
 {
     public CreateStatsinventory Statsinventory;
     private string _tagToDamage = "Enemy";

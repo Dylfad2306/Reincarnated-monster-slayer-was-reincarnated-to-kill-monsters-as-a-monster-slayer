@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using player;
+using Unity.Mathematics;
 using UnityEngine;
 
 
@@ -27,7 +28,7 @@ using UnityEngine;
        {
            if (ablilityCooldown <= Time.time)
            {
-               GameObject RockShot = Instantiate(abilityPrefab, _Spawnpoint.position, transform.rotation);
+               GameObject RockShot = Instantiate(abilityPrefab, _Spawnpoint.position, quaternion.identity);
                RockShot.GetComponent<RockShotDmg>().Init(_tagToDamage);
 
                if (gameObject.tag == "Player")
@@ -46,7 +47,7 @@ using UnityEngine;
        public override void Init(string tagToDamage, Transform Spawnpoint)
        {
            base.Init(tagToDamage, Spawnpoint);
-           abilityPrefab = Resources.Load("active/T1/fireball/RockShotprefab") as GameObject;
+           abilityPrefab = Resources.Load("active/T1/RockShot/RockShotprefab") as GameObject;
            _Spawnpoint = Spawnpoint;
            playerView = Spawnpoint;
        }
