@@ -35,8 +35,7 @@ using UnityEngine;
                {
                    playerStats.playermana -= 10;
                }
-                         
-                         
+               
                RockShot.GetComponent<Rigidbody>().velocity = playerView.forward * BallSpeed;
                          
                Destroy(RockShot, 5f);  
