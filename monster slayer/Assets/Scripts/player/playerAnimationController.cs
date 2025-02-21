@@ -152,11 +152,6 @@ namespace player
             {
                 readyToAttack = true;
             }
-
-            if (!leftClick)
-            {
-                readyToAttack = false;
-            }
         }
 
     
@@ -178,7 +173,16 @@ namespace player
 
             animator.SetFloat(velocityZHash, velocityZ);
             animator.SetFloat(velocityXHash, velocityX);
-            animator.SetBool(readyToAttackHash, readyToAttack);
+            //animator.SetBool(readyToAttackHash, readyToAttack);
+        }
+        
+        public void InitateAttack()
+        {
+            animator.SetBool(readyToAttackHash, true);
+        }
+        public void EndAttack()
+        {
+            animator.SetBool(readyToAttackHash, false);
         }
     }
 }

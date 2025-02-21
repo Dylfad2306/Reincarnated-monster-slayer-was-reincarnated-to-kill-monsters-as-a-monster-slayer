@@ -25,6 +25,7 @@ namespace Wepon
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && !isSwinging)
             {
+                playerAnimationController.InitateAttack();
                 isSwinging = true;
                 hitEnemy = true;
                 attackTimeer = Time.time + 1f;
@@ -32,6 +33,7 @@ namespace Wepon
 
             if (isSwinging && Time.time > attackTimeer)
             {
+                playerAnimationController.EndAttack();
                 isSwinging = false;
                 hitEnemy = false;
             }
@@ -44,6 +46,7 @@ namespace Wepon
                 other.gameObject.GetComponent<EnemyStats>().enemyHealth -= playerStats.playerDamage;
                 isSwinging = false;
                 hitEnemy = false;
+                playerAnimationController.EndAttack();
             }
         }
 

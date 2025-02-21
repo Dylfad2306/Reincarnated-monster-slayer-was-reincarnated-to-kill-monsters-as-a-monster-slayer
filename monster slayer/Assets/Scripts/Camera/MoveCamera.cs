@@ -9,11 +9,6 @@ namespace Camera
         bool firstPerson = true;
         bool thirdPerson = false;
 
-        private void Start()
-        {
-        
-        }
-
         void Update()
         {
             bool SwitchPerspective = Input.GetKey("h");
@@ -43,11 +38,6 @@ namespace Camera
                 transform.position = thirdPersonCameraPosition.position;
                 transform.rotation = thirdPersonCameraPosition.rotation;
             }
-
-
-
-
-        
         }
     }
 }
