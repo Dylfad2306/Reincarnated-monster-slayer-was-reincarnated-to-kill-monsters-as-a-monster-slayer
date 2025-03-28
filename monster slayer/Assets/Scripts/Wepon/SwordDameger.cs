@@ -43,7 +43,7 @@ namespace Wepon
         {
             if (other.gameObject.tag == "Enemy" && hitEnemy)
             {
-                other.gameObject.GetComponent<EnemyStats>().enemyHealth -= playerStats.playerDamage;
+                other.gameObject.GetComponent<EnemyStats>().enemyHealth -= playerStats.getPlayerDamage();
                 isSwinging = false;
                 hitEnemy = false;
                 playerAnimationController.EndAttack();

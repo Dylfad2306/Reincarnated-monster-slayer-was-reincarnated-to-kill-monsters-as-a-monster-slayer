@@ -32,10 +32,10 @@ namespace Ui
             var playerLevelXp = Create<Label>();
             var playerMana = Create<Label>();
             
-            playerhealth.text = "Health: " + playerstats.playerHealth + "/" + playerstats.playerMaxHealth;
+            playerhealth.text = "Health: " + playerstats.getPlayerHealth() + "/" + playerstats.getPlayerMaxHealth();
             playerLevel.text = "Level: " + levelHandeler.playerLevel;
             playerLevelXp.text = "xp: " + levelHandeler.currentXp + "/" + levelHandeler.requirerdXp;
-            playerMana.text = "Mana: " + playerstats.playermana + "/" + playerstats.playermaxmana;
+            playerMana.text = "Mana: " + playerstats.getPlayerMana() + "/" + playerstats.getPlayerMaxMana();
             
             playerStatsBox.Add(playerhealth);
             playerStatsBox.Add(playerMana);

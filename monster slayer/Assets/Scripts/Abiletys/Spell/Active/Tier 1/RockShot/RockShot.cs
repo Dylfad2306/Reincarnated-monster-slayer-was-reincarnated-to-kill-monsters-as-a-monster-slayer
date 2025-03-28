@@ -33,7 +33,7 @@ using UnityEngine;
 
                if (gameObject.tag == "Player")
                {
-                   playerStats.playermana -= 10;
+                   playerStats.setmana(playerStats.getPlayerMana() - 10);
                }
                
                RockShot.GetComponent<Rigidbody>().velocity = playerView.forward * BallSpeed;

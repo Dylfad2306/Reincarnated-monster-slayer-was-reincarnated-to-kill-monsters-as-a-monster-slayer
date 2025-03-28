@@ -17,7 +17,7 @@ public class CreateStatsinventory : MonoBehaviour
     public LevelHandeler playerLevel;
         
     private bool _isUIVisible = false;
-
+    //stats
     public int strengthInt = 1;
     public int healthInt = 1;
     public int defenseint = 1;
@@ -26,7 +26,7 @@ public class CreateStatsinventory : MonoBehaviour
     public float magicalPowerInt = 1;
     public int manaInt = 1;
     public int customPointsInt = 0;
-
+    
     private Button StrengthIncrease;
     private Button HealthIncrease;
     private Button DefenseIncrease;

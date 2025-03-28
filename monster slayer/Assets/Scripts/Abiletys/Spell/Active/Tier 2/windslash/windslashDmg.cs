@@ -30,8 +30,8 @@ public class windslashDmg : MonoBehaviour
 
         if ("Player" == _tagToDamage && other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<PlayerStats>().playerHealth -= 1;
-            print(other.gameObject.GetComponent<PlayerStats>().playerHealth);
+            PlayerStats player = other.gameObject.GetComponent<PlayerStats>();
+            player.setHealth(player.getPlayerHealth() - 1);
             Destroy(gameObject);
         }
     }

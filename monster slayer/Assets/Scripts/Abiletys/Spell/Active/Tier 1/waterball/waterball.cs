@@ -32,7 +32,7 @@ public class waterball : ActiveAbility, IAbility
 
             if (gameObject.tag == "Player")
             {
-                playerStats.playermana -= 10;
+                playerStats.setmana(playerStats.getPlayerMana() - 10);
             }
                          
                          

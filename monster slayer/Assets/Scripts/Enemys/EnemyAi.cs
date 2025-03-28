@@ -129,8 +129,8 @@ namespace Enemys
 
             if (!alreadyAttacked)
             {
-
-                PlayerStats.playerHealth -= EnemyStats.enemyDamage;
+                PlayerStats.setHealth(PlayerStats.getPlayerHealth() - (int)EnemyStats.enemyDamage);
+               // PlayerStats.playerHealth -= EnemyStats.enemyDamage;
 
                 alreadyAttacked = true;
                 Invoke(nameof(ResetAttack), timeBetweenAttacks);
