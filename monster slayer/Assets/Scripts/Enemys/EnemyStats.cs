@@ -12,8 +12,16 @@ namespace Enemys
         public float enemyHealth;
         public float maxEnemyHealth;
         public float enemyDamage;
+        [SerializeField] private int maxCount;
 
+        [SerializeField]
+        private EnemyFactory enemyFactory;
 
+        public int GetMaxCount()
+        {
+            return maxCount;
+        }
+    
         private void Awake()
         {
             playerObj = GameObject.Find("playerObj");
@@ -25,6 +33,7 @@ namespace Enemys
             {
                 playerLevel.currentXp += 3;
                 Destroy(gameObject);
+                enemyFactory.DecreaseSpawnCount();
             }
         }
     }

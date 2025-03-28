@@ -18,10 +18,6 @@ namespace Test
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                GameObject SkeletonSpawner = Instantiate(skeletonPreFab, spawnLocation.position, spawnLocation.rotation);
-            }
             spawnchanse = UnityEngine.Random.Range(1f, 100f);
             spawnchanse = Mathf.Clamp(spawnchanse, 1f, 100f);
             if (spawnchanse >= 3 && spawnchanse <= 4 && canSpawn == true)

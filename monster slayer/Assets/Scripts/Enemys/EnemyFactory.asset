@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f0ff2ce61194e449cff27579d8a5fa, type: 3}
+  m_Name: EnemyFactory
+  m_EditorClassIdentifier: 
+  prefabEnemies:
+  - {fileID: 3136820629370392942, guid: 62dcba975a0bdfe47bef48ea43049412, type: 3}
+  - {fileID: 1931298151966786, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+  - {fileID: 1524411113276028, guid: e2aafa8770d34a9591b41bedf4e318ba, type: 3}
+  currentSpawnCount: 75
+  spawnLimit: 500

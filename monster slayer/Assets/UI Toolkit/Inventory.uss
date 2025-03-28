@@ -62,3 +62,6 @@
     font-size: 20px;
     -unity-font-style: bold;
 } 
+Button:hover, Button:focus {
+    background-color: gold;
+}

@@ -13,7 +13,7 @@ namespace Enemys
     {
         private PlayerStats PlayerStats;
         public EnemyStats EnemyStats;
-        public EnemyHealthBar EnemyHealthBar;
+        //public EnemyHealthBar EnemyHealthBar;
         public enemyspellselect enemyspells;
 
         public NavMeshAgent agent;
@@ -39,7 +39,7 @@ namespace Enemys
         
         private void Awake()
         {
-            EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
+            //EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
             player = GameObject.Find("playerObj").transform;
             playerObj = GameObject.Find("playerObj");
             PlayerStats = playerObj.GetComponent<PlayerStats>();
@@ -48,7 +48,7 @@ namespace Enemys
 
         private void Update()
         {
-            EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
+            //EnemyHealthBar.UpdateHealthBar(EnemyStats.enemyHealth, EnemyStats.maxEnemyHealth);
 
             playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -56,7 +56,7 @@ namespace Enemys
 
             if (!playerInSightRange && !playerInAttackRange && !playerInSpellRange) Patroling();
             if (playerInSightRange && !playerInAttackRange && !playerInSpellRange) ChasePlayer();
-            if (playerInSightRange && !playerInAttackRange && playerInSpellRange)
+            if (playerInSightRange && !playerInAttackRange && playerInSpellRange && enemyspells != null)
             {
                 SpellChast(); 
                 ChasePlayer();

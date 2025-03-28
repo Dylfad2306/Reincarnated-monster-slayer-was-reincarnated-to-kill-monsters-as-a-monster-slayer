@@ -52,19 +52,14 @@ public class CreateStatsinventory : MonoBehaviour
             {
                 _isUIVisible = true;
                 CreateInventoryUI();
-                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 Time.timeScale = 0f;
                 spawnSeketons.canSpawn = false;
             }
         }
     }
-
-    private void OnValidate()
-    {
-        //CreateInventoryUI();
-    }
-
+    
     public void CreateInventoryUI()
     {
         var root = document.rootVisualElement;
@@ -149,7 +144,7 @@ public class CreateStatsinventory : MonoBehaviour
         ManaStatText.text = "Mana: " + manaInt;
         ManaIncrease.text = "+1";
         
-        Backgroundvisual.Add(inventoryBox);
+        
         //inventory items
         inventoryBox.Add(inventoryTopBar);
         inventoryBox.Add(BottomPart);
@@ -161,7 +156,7 @@ public class CreateStatsinventory : MonoBehaviour
         buttonGroup.Add(equipmentinventoryButton);
         equipmentinventoryButton.Add(equipmentinventoryButtonText);
         buttonGroup.Add(proficiencyButton);
-        proficiencyButton.Add(proficiencyButtonText);
+        //proficiencyButton.Add(proficiencyButtonText);
         buttonGroup.Add(statsButton);
         statsButton.Add(statsButtonText);
         //Bottom parts
@@ -198,9 +193,9 @@ public class CreateStatsinventory : MonoBehaviour
         Mana.Add(ManaStatText);
         Mana.Add(ManaIncrease);
 
-        proficiencyButton.clicked += OpenProficiencyMenu;
+        proficiencyButton.clickable.clicked += () => { OpenProficiencyMenu(); };
         
-        if (customPointsInt >= 1)
+        if (customPointsInt >= 0)
         {
             StrengthIncrease.clicked += () => { if (customPointsInt > 0) { strengthInt += 1; UpdateStats(StrengthStatText, "Strength: " + strengthInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
             HealthIncrease.clicked += () => { if (customPointsInt > 0) { healthInt += 1; UpdateStats(HealthStatText, "Health: " + healthInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
@@ -210,7 +205,8 @@ public class CreateStatsinventory : MonoBehaviour
             magicalPowerIncrease.clicked += () => { if (customPointsInt > 0) { magicalPowerInt += 1; UpdateStats(magicalPowerStatText, "MagicalPower: " + magicalPowerInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
             ManaIncrease.clicked += () => { if (customPointsInt > 0) { manaInt += 1; UpdateStats(ManaStatText, "Mana: " + manaInt.ToString(), cutomPointsText, "Custom Points: " + (--customPointsInt).ToString()); } };
         }
-
+        StrengthIncrease.clicked += () => { Debug.Log("Strength Button Clicked!"); };
+        Backgroundvisual.Add(inventoryBox);
         root.Add(Backgroundvisual);
     }
 
