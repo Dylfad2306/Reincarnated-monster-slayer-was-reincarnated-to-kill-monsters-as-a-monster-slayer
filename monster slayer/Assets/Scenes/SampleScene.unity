@@ -1669,13 +1669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ca1333a7ce24b40ae318fefdcbaea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraObject: {fileID: 1687702113}
-  playerHealth: 100
-  playerMaxHealth: 100
-  playerDamage: 5
-  playermana: 100
-  playermaxmana: 100
-  manacooldown: 1
+  Statsinventory: {fileID: 510651806}
 --- !u!114 &942136320
 MonoBehaviour:
   m_ObjectHideFlags: 0

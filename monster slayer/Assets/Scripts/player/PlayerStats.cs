@@ -22,6 +22,12 @@ namespace player
         //public void increaseMaxHealth(int health) => playerMaxHealth += health;
         public void setmana(int mana) => playermana = mana;
 
+
+        public void LevelUp()
+        {
+            
+        }
+
         private void Update()
         {
             if (manacooldown <= Time.time && playermana <= playermaxmana - 1)
